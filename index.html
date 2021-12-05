@@ -10,39 +10,41 @@
     <div class="jumbo">
       <h1>Protocole OFA</h1>
     </div>
-    <form name="POFA">
-      <div class="taille-container">
-        <label for="taille-input">Taille (en cm)</label>
+    <div class="data-card">
+      <form name="POFA">
+        <div class="taille-container">
+          <label for="taille-input">Taille (en cm)</label>
+          <input
+            required
+            type="number"
+            min="100"
+            max="220"
+            name="taille"
+            id="taille-input"
+            placeholder="180"
+          />
+        </div>
+
+        <label for="poids-input">Poids (en Kg)</label>
         <input
           required
           type="number"
-          min="100"
+          min="30"
           max="220"
-          name="taille"
-          id="taille-input"
-          placeholder="180"
+          name="poids"
+          id="poids-input"
+          placeholder="70"
         />
-      </div>
 
-      <label for="poids-input">Poids (en Kg)</label>
-      <input
-        required
-        type="number"
-        min="30"
-        max="220"
-        name="poids"
-        id="poids-input"
-        placeholder="70"
-      />
+        <label for="women-radio">Femme</label>
+        <input required type="radio" name="sexe" id="women-radio" />
 
-      <label for="women-radio">Femme</label>
-      <input required type="radio" name="sexe" id="women-radio" />
+        <label for="men-radio">Homme</label>
+        <input required type="radio" name="sexe" id="men-radio" />
 
-      <label for="men-radio">Homme</label>
-      <input required type="radio" name="sexe" id="men-radio" />
-
-      <input type="submit" value="test" />
-    </form>
+        <input type="submit" value="test" />
+      </form>
+    </div>
 
     <div id="text"></div>
     <div id="dosesPOFA"></div>
