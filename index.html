@@ -4,15 +4,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="jumbo">
       <h1>Protocole OFA</h1>
+      <div class="ligne"></div>
+      <p style="display: none">
+        Outil d'aide à la préparation d'une anesthésie OFA selon le protocole
+        institutionnel.
+      </p>
+      <p>
+        Renseigner caractéristique du patient et vérifier l'absence de
+        contre-indication à la réalisation du protocle
+      </p>
+      <p>
+        L'application vous donne les posologies pour la préparation du plateau,
+        du pochon d'OFA et la vitesse de perfusion de la seringue Xylo Keta
+      </p>
+      <p>Descritption du déroulemtn de l'anesthésie chronologiquement</p>
     </div>
-    <div class="data-card">
-      <form name="POFA">
-        <div class="taille-container">
+    <div class="data-container">
+      <div class="data-card card1">
+        <form name="POFA">
           <label for="taille-input">Taille (en cm)</label>
           <input
             required
@@ -23,27 +43,32 @@
             id="taille-input"
             placeholder="180"
           />
-        </div>
+          <label for="poids-input">Poids (en Kg)</label>
+          <input
+            required
+            type="number"
+            min="30"
+            max="220"
+            name="poids"
+            id="poids-input"
+            placeholder="70"
+          />
 
-        <label for="poids-input">Poids (en Kg)</label>
-        <input
-          required
-          type="number"
-          min="30"
-          max="220"
-          name="poids"
-          id="poids-input"
-          placeholder="70"
-        />
+          <label for="women-radio">Femme</label>
+          <input required type="radio" name="sexe" id="women-radio" />
 
-        <label for="women-radio">Femme</label>
-        <input required type="radio" name="sexe" id="women-radio" />
+          <label for="men-radio">Homme</label>
+          <input required type="radio" name="sexe" id="men-radio" />
 
-        <label for="men-radio">Homme</label>
-        <input required type="radio" name="sexe" id="men-radio" />
-
-        <input type="submit" value="test" />
-      </form>
+          <input type="submit" value="test" />
+        </form>
+      </div>
+      <div class="data-card card2">
+        <h3>placeholder</h3>
+      </div>
+      <div class="data-card card3">
+        <h3>placeholder 2</h3>
+      </div>
     </div>
 
     <div id="text"></div>
