@@ -1,15 +1,11 @@
-:root {
-  --bg-color: #006d77;
-  --second-color: #ffcb47;
-  --green-valid: #83c5be;
-  --red-invalid: #e29578;
-  --neu-darker: #005d65;
-  --neu-white: #007d89;
-  --black: #1b1b1e;
-  --white: #edf6f9;
-}
+@import './colors.css';
 
 * {
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+}
+
+body {
   background-color: var(--bg-color);
   color: var(--white);
 }
@@ -25,14 +21,14 @@
 .jumbo :nth-child(4)::before {
   /*content: '3';*/
   margin-right: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: var(--bg-color);
   display: inline-block;
   color: var(--white);
   border-radius: 50%;
   padding: 5px;
-  height: 25px;
-  min-width: 25px;
+  height: 20px;
+  min-width: 20px;
   box-shadow: 3px 3px 7px #005d65, -3px -3px 7px #007d89;
 }
 .jumbo :last-child::before {
@@ -48,6 +44,23 @@
 .ligne {
   width: 60%;
   height: 2px;
-  border-bottom: solid 2px var(--neu-darker);
+  border-bottom: solid 1px var(--neu-darker);
   margin: auto;
+  border-color: var(--white);
+}
+
+.data-container {
+  background: royalblue;
+  width: 100%;
+  height: 60vh;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.data-card {
+  background: salmon;
+  width: 28%;
+  border-radius: 20px;
+  text-align: center;
 }
