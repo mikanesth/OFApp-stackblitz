@@ -15,10 +15,12 @@ body {
   color: var(--black);
   text-align: center;
 }
+/* pastilles precedent les items chapitres et dans les cartes */
 
 .jumbo :last-child::before,
 .jumbo :nth-child(5)::before,
-.jumbo :nth-child(4)::before {
+.jumbo :nth-child(4)::before,
+.data-card h3::before {
   /*content: '3';*/
   margin-right: 10px;
   font-size: 1rem;
@@ -29,15 +31,18 @@ body {
   padding: 5px;
   height: 20px;
   min-width: 20px;
-  box-shadow: 3px 3px 7px #005d65, -3px -3px 7px #007d89;
+  box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
 }
-.jumbo :last-child::before {
+.jumbo :last-child::before,
+.card3 h3::before {
   content: '3';
 }
-.jumbo :nth-child(5)::before {
+.jumbo :nth-child(5)::before,
+.card2 h3::before {
   content: '2';
 }
-.jumbo :nth-child(4)::before {
+.jumbo :nth-child(4)::before,
+.card1 h3::before {
   content: '1';
 }
 
@@ -50,7 +55,6 @@ body {
 }
 
 .data-container {
-  background: royalblue;
   width: 100%;
   height: 60vh;
   margin-top: 40px;
@@ -59,8 +63,37 @@ body {
   justify-content: space-around;
 }
 .data-card {
-  background: salmon;
+  background: var(--bg-color);
   width: 28%;
   border-radius: 20px;
   text-align: center;
+  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
+      var(--neu-darker),
+    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
+      var(--neu-white);
+}
+
+.ci-card {
+  margin: auto;
+  border-radius: 10px;
+  background: var(--light-red);
+  width: 90%;
+  min-height: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
+      var(--neu-darker),
+    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
+      var(--neu-white);
+  border: solid 4px var(--bg-color);
+}
+
+.ci-text {
+  background: royalblue;
+}
+.ci-text h4 {
+  display: inline-block;
+  margin: auto;
 }

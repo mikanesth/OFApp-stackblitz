@@ -36,6 +36,24 @@
       <!-- //////. carte caractéristiques de patient et validation des CI //////////-->
       <div class="data-card card1">
         <h3>Caractéristiques</h3>
+        <div class="ci-card">
+          <div class="ci-text">
+            <h4>Contre-indications:</h4>
+            <ul>
+              <li>Bloc cardiaque niv. 2-3</li>
+              <li>DFG < 30 (MgSO4)</li>
+              <li>Epilepsie</li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="ci-check">
+            <label for="ci-checkbox">
+              <input type="checkbox" name="ci-checkbox" id="ci-checkbox" />
+              <p>Je valide les contre-indications</p>
+              <span class="ci-custom-checkbox"></span>
+            </label>
+          </div>
+        </div>
         <form name="POFA">
           <label for="taille-input">Taille (en cm)</label>
           <input
