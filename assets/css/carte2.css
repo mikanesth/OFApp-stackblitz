@@ -1,0 +1,23 @@
+.pofa-card {
+  margin: auto;
+  border-radius: 10px;
+  width: 90%;
+  min-height: 20px;
+  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
+      var(--neu-darker),
+    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
+      var(--neu-white);
+  border: solid 4px var(--bg-color);
+}
+
+.pofa-card h4 {
+  margin: 2px;
+}
+
+.pofa-card ul {
+  font-size: 0.8rem;
+  text-align: start;
+  list-style: none;
+  margin: 10px 0px;
+  height: 65px;
+}

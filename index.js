@@ -3,7 +3,7 @@ let inputsArray = Array.from(inputs);
 let formOFA = document.querySelector('[name="POFA"]');
 let poidsIdeal;
 let Bmi;
-let dosesPOFA = document.querySelector('#dosesPOFA');
+let dosesPOFA = document.querySelector('#doses-pofa');
 let checkCi = document.querySelector('#ci-checkbox');
 let rootCss = document.querySelector(':root');
 
@@ -86,10 +86,10 @@ function finalCalcul(e) {
     let dexa = dexaCalc(poids);
     let ivSpeed = (poids * 1.5) / 10;
     dosesPOFA.innerHTML = `
-      <p>dose de Ketamine: ${ketamine} mg</p>
-      <p> dose de lidocaine: ${lidocaine} mg</p>
-      <p> dose Magnesium (MgSO4): ${magnesium} g</p>
-      <p>dose de dexamethasone: ${dexa} mg</p>
+      <li> - Ketamine: ${ketamine} mg</li>
+      <li> - lidocaine: ${lidocaine} mg</li>
+      <li> - Magnesium : ${magnesium} g</li>
+      <li> - Dexamethasone: ${dexa} mg</li>
       `;
     console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
   } else {
