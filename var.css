@@ -3,7 +3,7 @@
 
   --bg-color: #006d77;
   --second-color: #f08700;
-  --light-red: #ed6b5ace;
+  --light-red: #ed6b5aa8; /* ancien rouge plus opaque ed6b5ace*/
   --green-valid: #83c5be;
   --red-invalid: #ff1654;
   --neu-darker: #005d65;
@@ -23,6 +23,7 @@
   --neu-button-bg: inear-gradient(145deg, #00757f, #00626b);
   --neu-button-bg-hover: linear-gradient(145deg, #00626b, #00757f);
   --neu-button-color-hover: 8px 8px 16px #004c53, -8px -8px 16px #008e9b;
+  --neu-input-green: inset 2px 2px 4px #6fa7a2, inset -2px -2px 4px #97e3db;
 
-  /*///////////////// VAR PSEUDO-ELEMENTS ////////////////////*/
+  /*/ //////////////// VAR PSEUDO-ELEMENTS ////////////////////*/
 }

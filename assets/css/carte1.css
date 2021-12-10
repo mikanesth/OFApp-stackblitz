@@ -21,16 +21,18 @@
 /* /////////////// TEXTE DES CONTRE INDICATIONS //////////////////////*/
 
 .ci-text {
-  flex: 3;
+  flex: 4;
 }
 
 .ci-text ul {
   text-align: left;
   font-size: 0.8rem;
+  padding-left: 20px;
 }
 .ci-text h4 {
   display: inline;
   text-align: left;
+  margin-left: 5px;
   font-size: 0.9rem;
 }
 
@@ -51,9 +53,9 @@
   height: 18px;
   width: 18px;
   border-radius: 5px;
-  background-color: var(--light-red);
-  border: solid 2px #ed6b5a;
-  margin: auto;
+  background-color: var(--bg-color);
+  box-shadow: var(--neu-little-input);
+  margin-left: 15px;
 }
 
 /*///////// LOGIQUE SURVOL ET CHECKED CHECKBOX STYLES */
@@ -62,7 +64,9 @@
   box-shadow: inset 2px 2px 4px #c95b4d, inset -2px -2px 4px #ff7b68;
 }
 .ci-check label span:hover {
-  box-shadow: inset 2px 2px 4px #c95b4d, inset -2px -2px 4px #ff7b68;
+  transition: 150ms;
+  box-shadow: var(--neu-input-green);
+  background: var(--green-valid);
 }
 .ci-custom-checkbox::before {
   content: '';
@@ -77,11 +81,13 @@
 }
 #ci-checkbox:checked + label span::before {
   opacity: 1;
-  transition: 50ms;
+  transition: 200ms;
 }
 
 #ci-checkbox:checked + label span {
-  box-shadow: inset 2px 2px 4px #c95b4d, inset -2px -2px 4px #ff7b68;
+  /*border: 1px solid var(--green-valid);*/
+  background: var(--green-valid);
+  box-shadow: var(--neu-input-green);
 }
 
 /*:::::::::::::::::: MISE EN FORME DU FORMULAIRE ::::::::::::::::::*/
@@ -130,12 +136,14 @@
 #OFA-form label[for='taille-input']::after {
   content: '';
   display: inline-block;
-  height: 12px;
-  width: 12px;
+  height: 10px;
+  width: 10px;
   border-radius: 50%;
   margin-left: 10px;
   box-shadow: var(--neu-little-element);
   border: 3px solid var(--bg-color);
+  position: relative;
+  top: 3px;
 }
 #OFA-form label[for='taille-input']::after {
   background-color: var(--after-bg-1);
@@ -178,7 +186,7 @@
   border-radius: 50%;
   background-color: var(--green-valid);
   position: absolute;
-  transform: translate(40%, 40%);
+  transform: translate(36%, 36%);
 }
 
 #OFA-form input[type='radio'] {
