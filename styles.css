@@ -1,4 +1,6 @@
 @import './var.css';
+@import './assets/css/carte1.css';
+@import './assets/css/carte2.css';
 
 * {
   color: var(--white);
@@ -73,5 +75,3 @@ body {
       var(--neu-white);
 }
 
-@import './assets/css/carte1.css';
-@import './assets/css/carte2.css';
