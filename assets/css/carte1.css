@@ -199,7 +199,9 @@
   background: salmon;
   border: solid 1px var(--bg-color);
   height: 10vh;
+  max-height: 50px;
   width: 10vw;
+  max-width: 100px;
   display: block;
   margin: auto;
   border-radius: 20px;
