@@ -7,10 +7,6 @@
   background: var(--light-red);
   width: 90%;
   min-height: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
   box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
       var(--neu-darker),
     var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
@@ -18,10 +14,17 @@
   border: solid 4px var(--bg-color);
 }
 
+.card1 {
+  max-width: 300px;
+}
+
 /* /////////////// TEXTE DES CONTRE INDICATIONS //////////////////////*/
 
 .ci-text {
-  flex: 4;
+  display: block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
 }
 
 .ci-text ul {
@@ -38,32 +41,30 @@
 
 /*////////////////// validation des contre indications //////////////////*/
 
-.ci-check {
-  flex: 1;
-  font-size: 0.7rem;
-}
-.ci-check input {
+.ci-text input {
   opacity: 1;
   display: none;
 }
 /*////////// case validation custom /////////*/
 
 .ci-custom-checkbox {
-  display: block;
+  display: inline-block;
   height: 18px;
   width: 18px;
   border-radius: 5px;
   background-color: var(--bg-color);
   box-shadow: var(--neu-little-input);
-  margin-left: 15px;
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
 }
 
 /*///////// LOGIQUE SURVOL ET CHECKED CHECKBOX STYLES */
 
-.ci-check label p:hover + span {
+.ci-text label p:hover + span {
   box-shadow: inset 2px 2px 4px #c95b4d, inset -2px -2px 4px #ff7b68;
 }
-.ci-check label span:hover {
+.ci-text label span:hover {
   transition: 150ms;
   box-shadow: var(--neu-input-green);
   background: var(--green-valid);
