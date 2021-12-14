@@ -12,6 +12,7 @@
 
 .pofa-card h4 {
   margin: 2px;
+  font-size: smaller;
 }
 
 .pofa-card ul {
@@ -32,10 +33,19 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  font-size:0.8rem;
+  font-size: 0.8rem;
 }
 
-.pofa-card__flex-container ul{
+.pofa-card__flex-container ul {
   border-left: 1px solid var(--white);
-  
+}
+
+.dex-card {
+  font-size: 0.8rem;
+  width: 90%;
+  margin: auto;
+}
+
+.xyloket-card {
+  font-size: 0.8rem;
 }
