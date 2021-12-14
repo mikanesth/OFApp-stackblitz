@@ -86,10 +86,10 @@ function finalCalcul(e) {
     let dexa = dexaCalc(poids);
     let ivSpeed = (poids * 1.5) / 10;
     dosesPOFA.innerHTML = `
-      <li> - Ketamine: ${ketamine} mg</li>
-      <li> - lidocaine: ${lidocaine} mg</li>
-      <li> - Magnesium : ${magnesium} g</li>
-      <li> - Dexamethasone: ${dexa} mg</li>
+      <li> - Ketamine: ${ketamine} mg soit ${ketamine / 10} ml</li>
+      <li> - Lidocaine: ${lidocaine} mg soit ${lidocaine / 10} ml</li>
+      <li> - Magnesium : ${magnesium} g soit ${magnesium / 0.15} ml</li>
+      <li> - Dexamethasone: ${dexa} mg soit ${dexa / 4} ml</li>
       `;
     console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
   } else {
