@@ -21,14 +21,14 @@
 }
 
 .classic-drug-card :first-child strong {
-  background-color: lightblue;
+  background-color: rgb(133,199,227);
 }
 
 .classic-drug-card :nth-child(2) strong {
   background-color: rgb(255, 255, 43);
 }
 .classic-drug-card :last-child strong {
-  background-color: rgb(235, 170, 235);
+  background-color: rgb(222, 191, 217);
 }
 .pofa-card h4 {
   margin: 2px;
