@@ -216,6 +216,6 @@
 }
 
 #OFA-form input[type='submit']:active {
-  transition: 50ms;
+  transition: 100ms;
   box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
 }
