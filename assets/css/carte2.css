@@ -1,4 +1,4 @@
-.pofa-card {
+.pofa-card, .container_classic-drugs, .container_monito {
   margin: auto;
   border-radius: 10px;
   width: 90%;
@@ -9,7 +9,27 @@
       var(--neu-white);
   border: solid 4px var(--bg-color);
 }
+.container_classic-drugs {
+  margin-top: 20px;
+  margin-bottom: 20px;  
+}
 
+.classic-drug-card strong {
+  padding: 3px;
+  border-radius: 3px;
+  color: var(--black);
+}
+
+.classic-drug-card :first-child strong {
+  background-color: lightblue;
+}
+
+.classic-drug-card :nth-child(2) strong {
+  background-color: rgb(255, 255, 43);
+}
+.classic-drug-card :last-child strong {
+  background-color: rgb(235, 170, 235);
+}
 .pofa-card h4 {
   margin: 2px;
   font-size: smaller;
