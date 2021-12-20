@@ -1,6 +1,7 @@
 @import './var.css';
 @import './assets/css/carte1.css';
 @import './assets/css/carte2.css';
+@import './assets/css/carte3.css';
 
 * {
   color: var(--white);
@@ -48,6 +49,8 @@ body {
   content: '1';
 }
 
+/*::::::: ligne de séparation entre le titre et l'introduction ::::::::*/
+
 .ligne {
   width: 60%;
   height: 2px;
@@ -55,6 +58,8 @@ body {
   margin: auto;
   border-color: var(--white);
 }
+
+/*::::::::::::: gros flex container pour toutes les cartes ::::::::::::::*/
 
 .data-container {
   width: 100%;
@@ -65,6 +70,8 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
+
+/*::::::::::::::::: modele de base des cartes :::::::::::::*/
 .data-card {
   background: var(--bg-color);
   width: 30%;

@@ -11,10 +11,7 @@
   border-radius: 10px;
   width: 90%;
   min-height: 20px;
-  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
-      var(--neu-darker),
-    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
-      var(--neu-white);
+  box-shadow: var(--neu-big-input);
   border: solid 4px var(--bg-color);
 }
 .container_classic-drugs {
@@ -82,14 +79,14 @@
   font-size: 0.8rem;
 }
 
+/*:::::::::::::::::pastille d'inforamtion sur quelle est chaque carte de prépration du palteau :::::::::::*/
+
 .pastille-carte {
   position: absolute;
   transform-origin: top left;
-  /*transform: rotate(-90deg) translateX(-110%) translateY(-50%); this transforme en carte verticale sur le coté gayuche*/
   transform: translate(5px,-50%);
   min-height: 10px;
-  /*width: 30px;*/
-  box-shadow: var(--neu-little-element);
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
   border-radius: 20px;
   box-sizing: border-box;
   padding: 5px;
