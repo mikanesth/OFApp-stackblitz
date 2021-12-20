@@ -1,3 +1,9 @@
+.card2 {
+  max-height: 100vh;
+  box-sizing: content-box;
+  padding-bottom: 20px;
+}
+
 .pofa-card,
 .container_classic-drugs,
 .container_monito {
@@ -22,6 +28,8 @@
   color: var(--black);
 }
 
+/* ::::::::: styling pour faire effet etiquettes de couluer comme sur le palteau ::::::*/
+
 .classic-drug-card :first-child strong {
   background-color: rgb(133, 199, 227);
 }
@@ -31,10 +39,6 @@
 }
 .classic-drug-card :last-child strong {
   background-color: rgb(222, 191, 217);
-}
-.pofa-card h4 {
-  margin: 2px;
-  font-size: smaller;
 }
 
 .pofa-card ul {
@@ -47,15 +51,6 @@
 .pofa-card img {
   width: 30px;
   display: inline-block;
-}
-
-.pofa-card::before {
-  content: '';
-  position: relative;
-  z-index: 1;
-  height: 20px;
-  width: 20px;
-  background: red;
 }
 
 .pofa-card__flex-container {
@@ -87,14 +82,18 @@
   font-size: 0.8rem;
 }
 
-.chapter-sign {
+.pastille-carte {
   position: absolute;
-  margin-top: 10px;
-  margin-left: 10px;
-  height: 30px;
-  width: 30px;
+  transform-origin: top left;
+  /*transform: rotate(-90deg) translateX(-110%) translateY(-50%); this transforme en carte verticale sur le coté gayuche*/
+  transform: translate(5px,-50%);
+  min-height: 10px;
+  /*width: 30px;*/
   box-shadow: var(--neu-little-element);
-  border-radius: 50%;
+  border-radius: 20px;
   box-sizing: border-box;
-  padding-top: 5px;
+  padding: 5px;
+  background-color: var(--green-valid);
+  color: var(--black);
+  font-size: 0.7rem;
 }

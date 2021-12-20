@@ -12,7 +12,10 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
+<!-- ////////////// DEBUT DU BODY ////////////////////////: -->
   <body>
+    <!-- ::::::::::::: BIG JUMBO DIV ::::::::::::::::::: -->
     <div class="jumbo">
       <h1>Protocole OFA</h1>
       <div class="ligne"></div>
@@ -31,12 +34,13 @@
       <p>Descritption du déroulement de l'anesthésie chronologiquement</p>
     </div>
 
-    <!-- ////////////  container des données ///////// -->
+    <!-- ////////////  CONTAINER DE TOUTES LES CARTES  ///////// -->
 
     <div class="data-container">
-      <!-- //////. carte caractéristiques de patient et validation des CI //////////-->
+      <!-- //////. CARTE FORMULAIRE D'ENTREE DES DONNEES  //////////-->
       <div class="data-card card1">
         <h3>Caractéristiques</h3>
+        <!-- ::::::::::: SOUS CARTE DE VALIDATION DES CONTRE-INDICATIONS ::::::::::::::::::: -->
         <div class="ci-card">
           <div class="ci-text">
             <input type="checkbox" name="ci-checkbox" id="ci-checkbox" />
@@ -53,6 +57,7 @@
             </ul>
           </div>
         </div>
+        <!-- ::::::::::::::::::::: FORMULAIRE D'ENTREE DES CARACTERISTIQUES PATIENT :::::::::::::::::::: -->
         <form name="POFA" id="OFA-form">
           <label for="taille-input">Taille (en cm)</label>
           <input
@@ -101,8 +106,9 @@
         <h3>Mon plateau d'induction</h3>
         <div class="pofa-card">
           <!-- ////////////// SOUS CARTE DE LA PREPARATION DU SOLUTE D'OFA OU POFA ///////////////////: -->
-          <div class="chapter-sign chapter1">A</div>
-          <h4>Préparation drogues OFA</h4>
+          
+          <div class="pastille-carte">Drogues OFA</div><!--  PASTILLE POUR CARACTÉRISER LA CARTE DE PREPARATION (OFA CLASSIQUE MONITORAGE)-->
+
           <div class="pofa-card__flex-container">
             <div class="pofa-card__inside-flex-container">
               <img
@@ -136,6 +142,7 @@
         </div>
 
         <div class="container_classic-drugs">
+          <div class="pastille-carte">"Classiques"</div>
           <!-- /////////////////// SOUS CARTE DE PREPARATION DES DROGUES "CALSSIQUES" ////////////////////// -->
           <div class="classic-drug-card inner-card">
             <p><strong>Sufentanil:</strong> seringue de 50µg</p>
@@ -144,6 +151,7 @@
           </div>
         </div>
         <div class="container_monito">
+          <div class="pastille-carte">Monitorage</div>
           <!-- /////////////////// SOUS CARTE PREPARATION MONITORAGE ////////////////////////-->
           <div class="monito-card inner-card">
             <p><strong>Hémodynamique:</strong> FC PAM +/- débit cardiaque</p>
