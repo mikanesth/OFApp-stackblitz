@@ -106,3 +106,12 @@ inputsArray.forEach((input) => {
 });
 
 console.log(inputsArray);
+
+// all the logic for the round timer
+
+const roundButton = document.querySelector('.round-timer');
+function roundTime(e) {
+  e.target.firstChild.nextSibling.style.animationPlayState = 'running';
+  console.log(e.target.firstChild.nextSibling);
+}
+roundButton.addEventListener('click', roundTime);

@@ -1,5 +1,80 @@
 /*::::::::::::: carte pour rappeler la nécéssité monitorage et checklist ::::::::::::::::::*/
-
-.card3__checklist {
-    background
+.card3 {
+    font-size: 0.8rem;
 }
+.card3__checklist, .card3__POFA {
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: var(--neu-big-input);
+    border: solid 4px var(--bg-color);
+    padding: 4px 0px;
+}
+
+.card3__checklist p {
+    margin: 0;
+}
+
+.card3__POFA__innercontainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card3__POFA__timer-text {
+    width: 70%;
+}
+
+ /*:::::::::::::::::: STYLING DU TIMER ROND:::::::::::::::::::*/
+
+.card3__POFA__innercontainer svg {
+    display: block;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+    position: relative;
+    height: 64px;
+    width: 64px;
+  }
+  
+.round-timer {
+    box-shadow: var(--neu-med-box);
+    background-color: var(--bg-color);
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+    transition: 150ms;
+  }
+  
+.round-timer:active {
+    box-shadow: var(--neu-little-element);
+  }
+.round-timer p {
+    display: block;
+    position: absolute;
+    margin-left: 32px;
+    transform: translateX(-50%);
+  }
+
+.card3__POFA__innercontainer svg circle {
+    stroke-dasharray: 186px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 3px;
+    stroke: var(--green-valid);
+    fill: none;
+    animation: rotate-countdown 300s linear forwards;
+  }
+  @keyframes rotate-countdown {
+    0% {
+      stroke-dashoffset: 0px;
+    }
+    100% {
+      stroke-dashoffset: 186px;
+    }
+  }

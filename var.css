@@ -26,5 +26,7 @@
   --neu-input-green: inset 2px 2px 4px #6fa7a2, inset -2px -2px 4px #97e3db;
   --neu-big-input: inset 7px 7px 14px #005c64, inset -7px -7px 14px #007e8a;
   --neu-big-box: 8px 8px 18px #005d65, -8px -8px 18px #007d89;
+  --neu-med-box: 6px 6px 12px #005d65, -6px -6px 12px #007d89;
   /*/ //////////////// VAR PSEUDO-ELEMENTS ////////////////////*/
 }
+
