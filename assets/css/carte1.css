@@ -1,0 +1,222 @@
+/*/////////////. CARTE DE VALIDATION DES CONTRE-INDICATIONS DANS CARTE DES CARACTERISTIQUES ////////*/
+
+.ci-card {
+  padding-top: 8px;
+  margin: auto;
+  border-radius: 10px;
+  background: var(--light-red);
+  width: 90%;
+  min-height: 20px;
+  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
+      var(--neu-darker),
+    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
+      var(--neu-white);
+  border: solid 4px var(--bg-color);
+}
+
+.card1 {
+  max-width: 300px;
+  max-height: 60vh;
+}
+
+/* /////////////// TEXTE DES CONTRE INDICATIONS //////////////////////*/
+
+.ci-text {
+  display: block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+.ci-text ul {
+  text-align: left;
+  font-size: 0.8rem;
+  padding-left: 20px;
+}
+.ci-text h4 {
+  display: inline;
+  text-align: left;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+/*////////////////// validation des contre indications //////////////////*/
+
+.ci-text input {
+  opacity: 1;
+  display: none;
+}
+/*////////// case validation custom /////////*/
+
+.ci-custom-checkbox {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  box-shadow: var(--neu-little-input);
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
+
+/*///////// LOGIQUE SURVOL ET CHECKED CHECKBOX STYLES */
+
+.ci-text label p:hover + span {
+  box-shadow: inset 2px 2px 4px #c95b4d, inset -2px -2px 4px #ff7b68;
+}
+.ci-text label span:hover {
+  transition: 150ms;
+  box-shadow: var(--neu-input-green);
+  background: var(--green-valid);
+}
+.ci-custom-checkbox::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 8px;
+  width: 16px;
+  border-bottom: solid 3px var(--white);
+  border-left: solid 3px var(--white);
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+#ci-checkbox:checked + label span::before {
+  opacity: 1;
+  transition: 200ms;
+}
+
+#ci-checkbox:checked + label span {
+  /*border: 1px solid var(--green-valid);*/
+  background: var(--green-valid);
+  box-shadow: var(--neu-input-green);
+}
+
+/*:::::::::::::::::: MISE EN FORME DU FORMULAIRE ::::::::::::::::::*/
+
+#OFA-form {
+  /*background: salmon;*/
+  height: 33vh;
+  padding: 20px 0px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#OFA-form label {
+  margin-bottom: 5px;
+}
+
+/*:::::::::::::::::: MISE EN FORME DES INPUT DES VALEURS TAILLE ET POIDS ::::::::::::::::::*/
+
+#OFA-form input[type='number'] {
+  background: var(--bg-color);
+  border-radius: 10px;
+  width: 60%;
+  min-height: 4vh;
+  color: var(--white);
+  border: 1px solid var(--bg-color);
+  box-shadow: var(--neu-little-input);
+}
+
+#OFA-form input[type='number']::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#OFA-form input[type='number']::-webkit-inner-spin-button {
+  display: none;
+}
+
+#OFA-form input[type='number']:focus {
+  box-shadow: var(--neu-little-input-focus);
+  border: 2px solid var(--neu-white);
+  /*border: 1px solid var(--light-red);*/
+  outline: none;
+}
+
+#OFA-form label[for='poids-input']::after,
+#OFA-form label[for='taille-input']::after {
+  content: '';
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+  box-shadow: var(--neu-little-element);
+  border: 3px solid var(--bg-color);
+  position: relative;
+  top: 3px;
+}
+#OFA-form label[for='taille-input']::after {
+  background-color: var(--after-bg-1);
+}
+#OFA-form label[for='poids-input']::after {
+  background-color: var(--after-bg-2);
+}
+
+/*::::::::::::::::::: MISE EN FORME DES BOUTONS RADIO DU SEXE ::::::::::::::::::::*/
+
+#OFA-form label[for='men-radio'] span,
+#OFA-form label[for='women-radio'] span {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: linear-gradient(145deg, #00757f, #00626b);
+  box-shadow: 5px 5px 10px #00545c, -5px -5px 10px #008692;
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
+}
+
+#OFA-form input[type='radio']:checked + span {
+  background: #006d77;
+  box-shadow: inset 5px 5px 10px #00545c, inset -5px -5px 10px #008692;
+}
+
+#OFA-form label[for='men-radio'] span:hover,
+#OFA-form label[for='women-radio'] span:hover {
+  background: linear-gradient(145deg, #00626b, #00757f);
+  box-shadow: 5px 5px 10px #00545c, -5px -5px 10px #008692;
+}
+#OFA-form input[type='radio']:checked + span::before {
+  content: '';
+  display: block;
+  opacity: 1;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: var(--green-valid);
+  position: absolute;
+  transform: translate(36%, 36%);
+}
+
+#OFA-form input[type='radio'] {
+  display: none;
+}
+
+/*::::::::::::::::: MISE EN FORME DU BOUTON VALIDER :::::::::::::::::::::::*/
+
+#OFA-form input[type='submit'] {
+  background: salmon;
+  border: solid 1px var(--bg-color);
+  height: 10vh;
+  max-height: 50px;
+  width: 10vw;
+  max-width: 100px;
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  background: var(--neu-button-bg);
+  box-shadow: var(--neu-button-color);
+}
+
+#OFA-form input[type='submit']:hover {
+  box-shadow: var(--neu-button-color-hover);
+  background: var(--neu-button-bg-hover);
+}
+
+#OFA-form input[type='submit']:active {
+  transition: 100ms;
+  box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
+}

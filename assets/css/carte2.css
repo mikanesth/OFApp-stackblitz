@@ -1,0 +1,99 @@
+.card2 {
+  max-height: 100vh;
+  box-sizing: content-box;
+  padding-bottom: 20px;
+}
+
+.pofa-card,
+.container_classic-drugs,
+.container_monito {
+  margin: auto;
+  border-radius: 10px;
+  width: 90%;
+  min-height: 20px;
+  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
+      var(--neu-darker),
+    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
+      var(--neu-white);
+  border: solid 4px var(--bg-color);
+}
+.container_classic-drugs {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.classic-drug-card strong {
+  padding: 3px;
+  border-radius: 3px;
+  color: var(--black);
+}
+
+/* ::::::::: styling pour faire effet etiquettes de couluer comme sur le palteau ::::::*/
+
+.classic-drug-card :first-child strong {
+  background-color: rgb(133, 199, 227);
+}
+
+.classic-drug-card :nth-child(2) strong {
+  background-color: rgb(255, 255, 43);
+}
+.classic-drug-card :last-child strong {
+  background-color: rgb(222, 191, 217);
+}
+
+.pofa-card ul {
+  font-size: 0.8rem;
+  text-align: start;
+  list-style: none;
+  height: 65px;
+}
+
+.pofa-card img {
+  width: 30px;
+  display: inline-block;
+}
+
+.pofa-card__flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.8rem;
+}
+.pofa-card__inside-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pofa-card__flex-container ul {
+  border-left: 1px solid var(--white);
+  padding: 10px;
+}
+
+.dex-card {
+  font-size: 0.8rem;
+  width: 90%;
+  margin: auto;
+}
+
+.inner-card {
+  font-size: 0.8rem;
+}
+
+.pastille-carte {
+  position: absolute;
+  transform-origin: top left;
+  /*transform: rotate(-90deg) translateX(-110%) translateY(-50%); this transforme en carte verticale sur le coté gayuche*/
+  transform: translate(5px,-50%);
+  min-height: 10px;
+  /*width: 30px;*/
+  box-shadow: var(--neu-little-element);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: var(--green-valid);
+  color: var(--black);
+  font-size: 0.7rem;
+}
