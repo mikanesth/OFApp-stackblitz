@@ -42,7 +42,7 @@
 
 /*////////////////// validation des contre indications //////////////////*/
 
-.ci-text input {
+.ci-card input {
   opacity: 1;
   display: none;
 }
@@ -76,21 +76,35 @@
   position: absolute;
   height: 8px;
   width: 16px;
-  border-bottom: solid 3px var(--white);
-  border-left: solid 3px var(--white);
+  border-bottom: solid 3px var(--black);
+  border-left: solid 3px var(--black);
   transform: rotate(-45deg);
   opacity: 0;
+  transition: 150ms
 }
-#ci-checkbox:checked + label span::before {
+#ci-checkbox:checked + .ci-card>.ci-text label span::before {
   opacity: 1;
-  transition: 200ms;
+  
 }
 
-#ci-checkbox:checked + label span {
+#ci-checkbox:checked + .ci-card>.ci-text label span {
   /*border: 1px solid var(--green-valid);*/
   background: var(--green-valid);
   box-shadow: var(--neu-input-green);
 }
+
+#ci-checkbox:checked + .ci-card {
+  background-color: var(--green-valid);
+}
+#ci-checkbox:checked + .ci-card>.ci-text h4, #ci-checkbox:checked + .ci-card>.ci-text ul li {
+  color: var(--black);
+}
+
+#ci-checkbox {
+
+  display: none;
+}
+
 
 /*:::::::::::::::::: MISE EN FORME DU FORMULAIRE ::::::::::::::::::*/
 
@@ -198,7 +212,6 @@
 /*::::::::::::::::: MISE EN FORME DU BOUTON VALIDER :::::::::::::::::::::::*/
 
 #OFA-form input[type='submit'] {
-  background: salmon;
   border: solid 1px var(--bg-color);
   height: 10vh;
   max-height: 50px;

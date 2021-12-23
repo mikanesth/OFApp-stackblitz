@@ -41,9 +41,9 @@
       <div class="data-card card1">
         <h3>Caractéristiques</h3>
         <!-- ::::::::::: SOUS CARTE DE VALIDATION DES CONTRE-INDICATIONS ::::::::::::::::::: -->
-        <div class="ci-card">
-          <div class="ci-text">
-            <input type="checkbox" name="ci-checkbox" id="ci-checkbox" />
+        <input type="checkbox" name="ci-checkbox" id="ci-checkbox" />
+        <div class="ci-card">       
+          <div class="ci-text">  
             <label for="ci-checkbox">
               <!-- <p>Valider</p> -->
               <h4>Valider les contre-indications:</h4>
@@ -191,13 +191,29 @@
             <div class="card3__titration__timer-text">
               <p>1-Démarrer la noradrénaline 20µg à √10</p>
               <p>2-Bolus de 10µg dexdor toutes les 2 min QSP Fc [50-70]</p>
-              <p>3- démarrer chrono pour l'algorithme</p>
+              <p>3- démarrer timer et suivre l'algorithme</p>
             </div>
             <div class="round-timer2">
               <p>Start<br>2min</p>
               <svg>
                 <circle r="30" cx="32" cy="32"></circle>
               </svg>
+            </div>
+          </div>
+          <div class="card3__titration__algorithm__container">
+            <div class="card3__algorithm__card">
+              <div class="algorithm__card__situation"><span>FC &lt; 45</span></div>
+              <div class="algorithm__card__reaction">Arrêt injection dexdor<br>Atropine 0.25 à 0.5mg</div>
+            </div>
+            <div class="card3__algorithm__card cardOK">
+              <div class="algorithm__card__situation situationOK"><span>FC [50-70]<br>PAM OK</span></div>
+              <div class="algorithm__card__reaction reactionOK">
+                <button class="little-button">Suivant</button>
+              </div>
+            </div>
+            <div class="card3__algorithm__card">
+              <div class="algorithm__card__situation"><span>PAM &#8595; 20%</span></div>
+              <div class="algorithm__card__reaction">Boli de NAD<br>ou<br>&#8593; débit</div>
             </div>
           </div>
         </div>

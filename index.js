@@ -6,6 +6,7 @@ let Bmi;
 let dosesPOFA = document.querySelector('#doses-pofa');
 let checkCi = document.querySelector('#ci-checkbox');
 let rootCss = document.querySelector(':root');
+let algoCardContainer = document.querySelector('.card3__titration__algorithm__container');
 
 function checkNumbers(e) {
   //tablette.textContent = '';
@@ -107,7 +108,7 @@ inputsArray.forEach((input) => {
 
 console.log(inputsArray);
 
-// all the logic for the round timer
+// all the logic for the simple round timer for POFA perfusion sur 5 min
 
 const roundButton5 = document.querySelector('.round-timer5');
 const roundButton2 = document.querySelector('.round-timer2');
@@ -116,22 +117,28 @@ function roundTime(e) {
   console.log(e.target);
 }
 
+// fonction du bouton de l'algo pour le dexdor 
+// 1- ca lance le chrono si !running ou ca l'arrête si running en remettant le texte a "start 2 min"
+// TODO si lance le chrono affiche trois bouton rond : 1- fc < 40 = stop dexdor et discuter atropine 2- fc 45-70 et PAM OK ==> OK
+//3- PAM baisse de 20% = ascencion noradre 3a- si PAM OK et Fc OK ==> OK 3b- si PAM OK et FC encore > 70 = poursuivre
+
 function timerAlgo(e) {
   console.log(e.target.parentNode);
   let roundTimer= e.target.parentNode;
   if(roundTimer.classList.contains('timer2-running')) {
+    roundTimer.classList.remove('timer2-running');
     roundTimer.innerHTML = `<p>Start<br>2min</p>
     <svg>
       <circle r="30" cx="32" cy="32"></circle>
-    </svg>`
-    roundTimer.classList.remove('timer2-running');
+    </svg>`;   
   }
   else {
     roundTimer.classList.add('timer2-running');
     roundTimer.innerHTML = `<p>Reset<br>2min</p>
     <svg>
       <circle r="30" cx="32" cy="32"></circle>
-    </svg>`
+    </svg>`;
+    algoCardContainer.classList.add('visible');
   }
 }
 roundButton5.addEventListener('click', roundTime);
