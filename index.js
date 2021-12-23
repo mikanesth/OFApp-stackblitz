@@ -120,10 +120,18 @@ function timerAlgo(e) {
   console.log(e.target.parentNode);
   let roundTimer= e.target.parentNode;
   if(roundTimer.classList.contains('timer2-running')) {
+    roundTimer.innerHTML = `<p>Start<br>2min</p>
+    <svg>
+      <circle r="30" cx="32" cy="32"></circle>
+    </svg>`
     roundTimer.classList.remove('timer2-running');
   }
   else {
     roundTimer.classList.add('timer2-running');
+    roundTimer.innerHTML = `<p>Reset<br>2min</p>
+    <svg>
+      <circle r="30" cx="32" cy="32"></circle>
+    </svg>`
   }
 }
 roundButton5.addEventListener('click', roundTime);
