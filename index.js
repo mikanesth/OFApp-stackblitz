@@ -109,9 +109,22 @@ console.log(inputsArray);
 
 // all the logic for the round timer
 
-const roundButton = document.querySelector('.round-timer');
+const roundButton5 = document.querySelector('.round-timer5');
+const roundButton2 = document.querySelector('.round-timer2');
 function roundTime(e) {
   e.target.firstChild.nextSibling.style.animationPlayState = 'running';
-  console.log(e.target.firstChild.nextSibling);
+  console.log(e.target);
 }
-roundButton.addEventListener('click', roundTime);
+
+function timerAlgo(e) {
+  console.log(e.target.parentNode);
+  let roundTimer= e.target.parentNode;
+  if(roundTimer.classList.contains('timer2-running')) {
+    roundTimer.classList.remove('timer2-running');
+  }
+  else {
+    roundTimer.classList.add('timer2-running');
+  }
+}
+roundButton5.addEventListener('click', roundTime);
+roundButton2.addEventListener('click', timerAlgo);

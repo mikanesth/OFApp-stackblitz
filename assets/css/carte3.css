@@ -2,7 +2,7 @@
 .card3 {
     font-size: 0.8rem;
 }
-.card3__checklist, .card3__POFA {
+.card3__checklist, .card3__POFA, .card3__titration {
     margin: auto;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -16,7 +16,7 @@
     margin: 0;
 }
 
-.card3__POFA__innercontainer {
+.card3__POFA__innercontainer, .card3__titration__innercontainer  {
     height: 100%;
     width: 100%;
     display: flex;
@@ -26,13 +26,13 @@
     flex-wrap: wrap;
 }
 
-.card3__POFA__timer-text {
+.card3__POFA__timer-text, .card3__titration__timer-text {
     width: 70%;
 }
 
- /*:::::::::::::::::: STYLING DU TIMER ROND:::::::::::::::::::*/
+ /*:::::::::::::::::: STYLING DES TIMER ROND:::::::::::::::::::*/
 
-.card3__POFA__innercontainer svg {
+.card3__POFA__innercontainer svg, .card3__titration__innercontainer svg  {
     display: block;
     transform: rotateY(-180deg) rotateZ(-90deg);
     position: relative;
@@ -40,7 +40,7 @@
     width: 64px;
   }
   
-.round-timer {
+.round-timer5, .round-timer2 {
     box-shadow: var(--neu-med-box);
     background-color: var(--bg-color);
     width: 64px;
@@ -51,24 +51,33 @@
     transition: 150ms;
   }
   
-.round-timer:active {
+.round-timer5:active, .round-timer2:active {
     box-shadow: var(--neu-little-element);
   }
-.round-timer p {
+.round-timer5 p, .round-timer2 p {
     display: block;
     position: absolute;
+    margin-top: 0.8rem;
     margin-left: 32px;
     transform: translateX(-50%);
   }
 
-.card3__POFA__innercontainer svg circle {
+.card3__POFA__innercontainer svg circle, .card3__titration__innercontainer svg circle  {
     stroke-dasharray: 186px;
     stroke-dashoffset: 0px;
     stroke-linecap: round;
     stroke-width: 3px;
     stroke: var(--green-valid);
     fill: none;
+  }
+
+  .round-timer5 svg circle {
     animation: rotate-countdown 300s linear forwards;
+  }
+  
+  .timer2-running svg circle {
+    animation: rotate-countdown 120s linear forwards running;
+
   }
   @keyframes rotate-countdown {
     0% {
@@ -76,5 +85,16 @@
     }
     100% {
       stroke-dashoffset: 186px;
+      stroke: var(--red-invalid);
     }
   }
+
+  /*:::::::::::::::::::::: PARTIE SUR LA TITRATION DE LA DEXMEDETO :::::::::::::::::::::::*/
+
+.card3__titration__timer-text:first-child {
+  margin-top: 5px;
+}
+
+.card3__titration__timer-text p {
+  font-size: 0.7rem;
+}
