@@ -23,11 +23,31 @@ p {
   color: var(--black);
   text-align: center;
 }
+.jumbo h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 /* pastilles precedent les items chapitres et dans les cartes */
 
-.jumbo :last-child::before,
-.jumbo :nth-child(5)::before,
-.jumbo :nth-child(4)::before,
+.title_paragraph1::before,
+.title_paragraph2::before,
+.title_paragraph3::before
+ {
+  right: 13%;
+  top: 40px;
+  font-size: 1rem;
+  background: var(--bg-color);
+  display: inline-block;
+  color: var(--white);
+  border-radius: 50%;
+  padding: 5px;
+  height: 20px;
+  min-width: 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
+}
+
 .data-card h3::before {
   /*content: '3';*/
   margin-right: 10px;
@@ -39,20 +59,39 @@ p {
   padding: 5px;
   height: 20px;
   min-width: 20px;
+  position: relative;
+  text-align: center;
   box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
 }
-.jumbo :last-child::before,
+.title_paragraph3::before,
 .card3 h3::before {
   content: '3';
 }
-.jumbo :nth-child(5)::before,
+.title_paragraph2::before,
 .card2 h3::before {
   content: '2';
 }
-.jumbo :nth-child(4)::before,
+.title_paragraph1::before,
 .card1 h3::before {
   content: '1';
 }
+
+.container__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 20px;
+
+}
+
+.title_paragraph1, .title_paragraph2, .title_paragraph3 {
+  width: 28%;
+  display: block;
+  text-align: start;
+  margin-top: -25px;
+}
+
 
 /*::::::: ligne de séparation entre le titre et l'introduction ::::::::*/
 
@@ -78,6 +117,7 @@ p {
 
 /*::::::::::::::::: modele de base des cartes :::::::::::::*/
 .data-card {
+  max-height: 80vh;
   background: var(--bg-color);
   width: 30%;
   border-radius: 20px;
