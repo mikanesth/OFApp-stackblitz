@@ -13,6 +13,7 @@
   min-height: 20px;
   box-shadow: var(--neu-big-input);
   border: solid 4px var(--bg-color);
+  padding: 10px 0px;
   
 }
 .container_classic-drugs {
@@ -85,7 +86,7 @@
 .pastille-carte {
   position: absolute;
   transform-origin: top left;
-  transform: translate(5px,-50%);
+  transform: translate(5px,-90%);
   min-height: 10px;
   box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
   border-radius: 20px;

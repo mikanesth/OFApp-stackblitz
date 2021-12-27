@@ -1,12 +1,17 @@
-let inputs = document.querySelectorAll('input');
+const inputs = document.querySelectorAll('input');
 let inputsArray = Array.from(inputs);
-let formOFA = document.querySelector('[name="POFA"]');
+const formOFA = document.querySelector('[name="POFA"]');
 let poidsIdeal;
 let Bmi;
-let dosesPOFA = document.querySelector('#doses-pofa');
-let checkCi = document.querySelector('#ci-checkbox');
-let rootCss = document.querySelector(':root');
-let algoCardContainer = document.querySelector('.card3__titration__algorithm__container');
+const dosesPOFA = document.querySelector('#doses-pofa');
+const checkCi = document.querySelector('#ci-checkbox');
+const rootCss = document.querySelector(':root');
+const algoCardContainer = document.querySelector('.card3__titration__algorithm__container');
+const dexdorButton = document.querySelector('.little-button');
+const inductionCard = document.querySelector('.card3__induction');
+const entretienCard = document.querySelector('.card3__entretien');
+let ivSpeed;
+const debitSeringue = document.querySelector('#debit-seringue');
 
 function checkNumbers(e) {
   //tablette.textContent = '';
@@ -85,13 +90,14 @@ function finalCalcul(e) {
     let lidocaine = lidoCalc(poids);
     let magnesium = magCalc(poids);
     let dexa = dexaCalc(poids);
-    let ivSpeed = (poids * 1.5) / 10;
+    ivSpeed = (poids * 1.5) / 10;
     dosesPOFA.innerHTML = `
       <li> - Ketamine: ${ketamine} mg soit ${ketamine / 10} ml</li>
       <li> - Lidocaine: ${lidocaine} mg soit ${lidocaine / 10} ml</li>
       <li> - Magnesium : ${magnesium} g soit ${magnesium / 0.15} ml</li>
       <li> - Dexamethasone: ${dexa} mg soit ${dexa / 4} ml</li>
       `;
+    debitSeringue.textContent = ivSpeed;
     console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
   } else {
     alert('Validez les contre-indications SVP');
@@ -143,3 +149,14 @@ function timerAlgo(e) {
 }
 roundButton5.addEventListener('click', roundTime);
 roundButton2.addEventListener('click', timerAlgo);
+
+
+function validDexdor(e){
+  console.log(e.target);
+  algoCardContainer.classList.remove('visible');
+  entretienCard.classList.add('visible');
+  inductionCard.classList.add('visible');
+
+}
+
+dexdorButton.addEventListener('click', validDexdor);

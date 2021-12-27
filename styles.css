@@ -17,6 +17,10 @@ p {
   margin-bottom: 0.5rem;
 }
 
+ul {
+  text-align: start;
+}
+
 
 .jumbo {
   font-family: 'Lato', sans-serif;
@@ -126,5 +130,9 @@ p {
       var(--neu-darker),
     var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
       var(--neu-white);
+}
+
+.card1 {
+  max-height: 65vh;
 }
 

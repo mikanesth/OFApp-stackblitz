@@ -2,14 +2,14 @@
 .card3 {
     font-size: 0.8rem;
 }
-.card3__checklist, .card3__POFA, .card3__titration {
+.card3__checklist, .card3__POFA, .card3__titration, .card3__induction, .card3__entretien {
     margin: auto;
     margin-bottom: 10px;
     border-radius: 10px;
     width: 90%;
     box-shadow: var(--neu-big-input);
     border: solid 4px var(--bg-color);
-    padding: 4px 0px;
+    padding: 8px 0px;
 }
 
 .card3__checklist p {
@@ -116,8 +116,13 @@
     opacity: 0;
 
 }
+
+.card3__entretien, .card3__induction {
+  opacity: 0;
+  transition: 200ms;
+}
 .visible {
-  height: 12vh; 
+  height: auto; 
   opacity: 1; 
 }
 
@@ -195,3 +200,10 @@
   transition: 100ms;
   box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
 }
+
+/*  :::::::: carte sur induction classique :::::::::::::  */
+
+
+
+
+
