@@ -10,10 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
-<!-- ////////////// DEBUT DU BODY ////////////////////////: -->
+  <!-- ////////////// DEBUT DU BODY ////////////////////////: -->
   <body>
     <!-- ::::::::::::: BIG JUMBO DIV ::::::::::::::::::: -->
     <div class="jumbo">
@@ -28,17 +28,15 @@
         </div>
         <div class="title_paragraph2">
           <p>
-            L'application vous donne les posologies pour la préparation du plateau,
-            du pochon d'OFA et la vitesse de perfusion de la seringue Xylo Keta
+            L'application vous donne les posologies pour la préparation du
+            plateau, du pochon d'OFA et la vitesse de perfusion de la seringue
+            Xylo Keta
           </p>
-
         </div>
         <div class="title_paragraph3">
-        
           <p>Descritption du déroulement de l'anesthésie chronologiquement</p>
         </div>
       </div>
-      
     </div>
 
     <!-- ////////////  CONTAINER DE TOUTES LES CARTES  ///////// -->
@@ -49,8 +47,8 @@
         <h3>Caractéristiques</h3>
         <!-- ::::::::::: SOUS CARTE DE VALIDATION DES CONTRE-INDICATIONS ::::::::::::::::::: -->
         <input type="checkbox" name="ci-checkbox" id="ci-checkbox" />
-        <div class="ci-card">       
-          <div class="ci-text">  
+        <div class="ci-card">
+          <div class="ci-text">
             <label for="ci-checkbox">
               <!-- <p>Valider</p> -->
               <h4>Valider les contre-indications:</h4>
@@ -113,8 +111,9 @@
         <h3>Mon plateau d'induction</h3>
         <div class="pofa-card">
           <!-- ////////////// SOUS CARTE DE LA PREPARATION DU SOLUTE D'OFA OU POFA ///////////////////: -->
-          
-          <div class="pastille-carte">Drogues OFA</div><!--  PASTILLE POUR CARACTÉRISER LA CARTE DE PREPARATION (OFA CLASSIQUE MONITORAGE)-->
+
+          <div class="pastille-carte">Drogues OFA</div>
+          <!--  PASTILLE POUR CARACTÉRISER LA CARTE DE PREPARATION (OFA CLASSIQUE MONITORAGE)-->
 
           <div class="pofa-card__flex-container">
             <div class="pofa-card__inside-flex-container">
@@ -184,9 +183,14 @@
               <p>Utiliser le timer à droite si besoin</p>
             </div>
             <div class="round-timer5">
-              <p>Start<br>5min</p>
+              <p>Start<br />5min</p>
               <svg>
-                <circle r="30" cx="32" cy="32" style="animation-play-state: paused"></circle>
+                <circle
+                  r="30"
+                  cx="32"
+                  cy="32"
+                  style="animation-play-state: paused"
+                ></circle>
               </svg>
             </div>
           </div>
@@ -201,7 +205,7 @@
               <p>3- Démarrer timer et suivre l'algorithme</p>
             </div>
             <div class="round-timer2">
-              <p>Start<br>2min</p>
+              <p>Start<br />2min</p>
               <svg>
                 <circle r="30" cx="32" cy="32"></circle>
               </svg>
@@ -209,18 +213,28 @@
           </div>
           <div class="card3__titration__algorithm__container">
             <div class="card3__algorithm__card">
-              <div class="algorithm__card__situation"><span>FC &lt; 45</span></div>
-              <div class="algorithm__card__reaction">Arrêt injection dexdor<br>Atropine 0.25 à 0.5mg</div>
+              <div class="algorithm__card__situation">
+                <span>FC &lt; 45</span>
+              </div>
+              <div class="algorithm__card__reaction">
+                Arrêt injection dexdor<br />Atropine 0.25 à 0.5mg
+              </div>
             </div>
             <div class="card3__algorithm__card cardOK">
-              <div class="algorithm__card__situation situationOK"><span>FC [50-70]<br>PAM OK</span></div>
+              <div class="algorithm__card__situation situationOK">
+                <span>FC [50-70]<br />PAM OK</span>
+              </div>
               <div class="algorithm__card__reaction reactionOK">
                 <button class="little-button">Suivant</button>
               </div>
             </div>
             <div class="card3__algorithm__card">
-              <div class="algorithm__card__situation"><span>PAM &#8595; 20%</span></div>
-              <div class="algorithm__card__reaction">Boli de NAD<br>ou<br>&#8593; débit</div>
+              <div class="algorithm__card__situation">
+                <span>PAM &#8595; 20%</span>
+              </div>
+              <div class="algorithm__card__reaction">
+                Boli de NAD<br />ou<br />&#8593; débit
+              </div>
             </div>
           </div>
         </div>
@@ -228,16 +242,27 @@
         <!-- ::::::::::::::::::::::: CARTE SUR INDUCTION CLASSIQUE ::::::::::::::::::::: -->
         <div class="card3__induction">
           <div class="pastille-carte">Induction</div>
-          <p>Propofol / Curare et IOT (selon entropy et FC) +/- sufentanil (5µg) en recours</p>
+          <p>
+            Propofol / Curare et IOT (selon entropy et FC) +/- sufentanil (5µg)
+            en recours
+          </p>
         </div>
 
         <!-- :::::::::::::::: CARTE SUR L'ENTRETIEN DE L'ANESTHESIE ::::::::::::::::: -->
         <div class="card3__entretien">
           <div class="pastille-carte">Entretien</div>
           <ul>
-            <li>Dexdor: 10µg (1ml) avant incision puis horaire QSP FC[50-70]</li>
-            <li>Seringue Keta / Xylo : <strong><span id="debit-seringue"></span> ml/h </strong></li>
-            <li>Sevo ou Propofol - Sufentanil si besoin - <strong>pas de bolus de morphine</strong></li>
+            <li>
+              Dexdor: 10µg (1ml) avant incision puis horaire QSP FC[50-70]
+            </li>
+            <li>
+              Seringue Keta / Xylo :
+              <strong><span id="debit-seringue"></span> ml/h </strong>
+            </li>
+            <li>
+              Sevo ou Propofol - Sufentanil si besoin -
+              <strong>pas de bolus de morphine</strong>
+            </li>
           </ul>
         </div>
       </div>
