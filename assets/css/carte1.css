@@ -33,12 +33,14 @@
   font-size: 0.8rem;
   padding-left: 20px;
 }
+
 .ci-text h4 {
   display: inline;
   text-align: left;
   margin-left: 5px;
   font-size: 0.9rem;
 }
+
 
 /*////////////////// validation des contre indications //////////////////*/
 
@@ -101,9 +103,17 @@
 }
 
 #ci-checkbox {
-
   display: none;
 }
+
+#ci-check, #ci-checkbox:checked + .ci-card > .ci-text #ci-uncheck {
+  display: none;
+}
+
+#ci-uncheck, #ci-checkbox:checked + .ci-card > .ci-text #ci-check {
+  display: inline;
+}
+
 
 
 /*:::::::::::::::::: MISE EN FORME DU FORMULAIRE ::::::::::::::::::*/
