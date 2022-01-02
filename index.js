@@ -1,4 +1,5 @@
 const inputs = document.querySelectorAll('input');
+const card1 = document.querySelector('.card1');
 let inputsArray = Array.from(inputs);
 const formOFA = document.querySelector('[name="POFA"]');
 let poidsIdeal;
@@ -103,6 +104,7 @@ function finalCalcul(e) {
       `;
     debitSeringue.textContent = ivSpeed;
     console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
+    card1.classList.add('animate__fadeOutLeftBig');
   } else {
     alert('Validez les contre-indications SVP');
   }

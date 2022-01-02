@@ -1,0 +1,23 @@
+/*::::::::::::: :::::::: iPhone size ::::::::::::::::::::::::::::::::::::*/
+@media screen and (max-width: 400px) {
+  .container__title {
+    display: none;
+  }
+
+  .data-container {
+    background: salmon;
+    align-items: center;
+    margin-top: 10vh;
+  }
+  .card2,
+  .card3 {
+    opacity: 0;
+    height: 0;
+    transition: 200ms;
+  }
+
+  /*:::::::::::   bouton de validaiton du formulaire :::::::::*/
+  #OFA-form input[type='submit'] {
+    width: 30vw;
+  }
+}

@@ -16,7 +16,9 @@
 
 .card1 {
   max-width: 300px;
+  min-width: 280px;
   max-height: 60vh;
+  opacity: 1;
 }
 
 /* /////////////// TEXTE DES CONTRE INDICATIONS //////////////////////*/
@@ -40,7 +42,6 @@
   margin-left: 5px;
   font-size: 0.9rem;
 }
-
 
 /*////////////////// validation des contre indications //////////////////*/
 
@@ -82,14 +83,13 @@
   border-left: solid 3px var(--black);
   transform: rotate(-45deg);
   opacity: 0;
-  transition: 150ms
+  transition: 150ms;
 }
-#ci-checkbox:checked + .ci-card>.ci-text label span::before {
+#ci-checkbox:checked + .ci-card > .ci-text label span::before {
   opacity: 1;
-  
 }
 
-#ci-checkbox:checked + .ci-card>.ci-text label span {
+#ci-checkbox:checked + .ci-card > .ci-text label span {
   /*border: 1px solid var(--green-valid);*/
   background: var(--green-valid);
   box-shadow: var(--neu-input-green);
@@ -98,7 +98,8 @@
 #ci-checkbox:checked + .ci-card {
   background-color: var(--green-valid);
 }
-#ci-checkbox:checked + .ci-card>.ci-text h4, #ci-checkbox:checked + .ci-card>.ci-text ul li {
+#ci-checkbox:checked + .ci-card > .ci-text h4,
+#ci-checkbox:checked + .ci-card > .ci-text ul li {
   color: var(--black);
 }
 
@@ -106,15 +107,15 @@
   display: none;
 }
 
-#ci-check, #ci-checkbox:checked + .ci-card > .ci-text #ci-uncheck {
+#ci-check,
+#ci-checkbox:checked + .ci-card > .ci-text #ci-uncheck {
   display: none;
 }
 
-#ci-uncheck, #ci-checkbox:checked + .ci-card > .ci-text #ci-check {
+#ci-uncheck,
+#ci-checkbox:checked + .ci-card > .ci-text #ci-check {
   display: inline;
 }
-
-
 
 /*:::::::::::::::::: MISE EN FORME DU FORMULAIRE ::::::::::::::::::*/
 

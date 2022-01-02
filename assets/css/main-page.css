@@ -1,0 +1,132 @@
+* {
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--white);
+}
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  text-align: start;
+}
+
+.jumbo {
+  font-family: 'Lato', sans-serif;
+  color: var(--black);
+  text-align: center;
+}
+.jumbo h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+/* pastilles precedent les items chapitres et dans les cartes */
+
+.title_paragraph1::before,
+.title_paragraph2::before,
+.title_paragraph3::before {
+  right: 13%;
+  top: 40px;
+  font-size: 1rem;
+  background: var(--bg-color);
+  display: inline-block;
+  color: var(--white);
+  border-radius: 50%;
+  padding: 5px;
+  height: 20px;
+  min-width: 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
+}
+
+.data-card h3::before {
+  /*content: '3';*/
+  margin-right: 10px;
+  font-size: 1rem;
+  background: var(--bg-color);
+  display: inline-block;
+  color: var(--white);
+  border-radius: 50%;
+  padding: 5px;
+  height: 20px;
+  min-width: 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
+}
+.title_paragraph3::before,
+.card3 h3::before {
+  content: '3';
+}
+.title_paragraph2::before,
+.card2 h3::before {
+  content: '2';
+}
+.title_paragraph1::before,
+.card1 h3::before {
+  content: '1';
+}
+
+.container__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.title_paragraph1,
+.title_paragraph2,
+.title_paragraph3 {
+  width: 28%;
+  display: block;
+  text-align: start;
+  margin-top: -25px;
+}
+
+/*::::::: ligne de séparation entre le titre et l'introduction ::::::::*/
+
+.ligne {
+  width: 60%;
+  height: 2px;
+  border-bottom: solid 1px var(--neu-darker);
+  margin: auto;
+  border-color: var(--white);
+}
+
+/*::::::::::::: gros flex container pour toutes les cartes ::::::::::::::*/
+
+.data-container {
+  width: 100%;
+  padding-bottom: 10px;
+  max-height: 100vh;
+  margin-top: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/*::::::::::::::::: modele de base des cartes :::::::::::::*/
+.data-card {
+  max-height: 80vh;
+  background: var(--bg-color);
+  max-width: 30%;
+  min-width: 300px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
+      var(--neu-darker),
+    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
+      var(--neu-white);
+}
+
+.card1 {
+  max-height: 65vh;
+}
