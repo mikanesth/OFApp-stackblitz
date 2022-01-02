@@ -6,7 +6,9 @@ let Bmi;
 const dosesPOFA = document.querySelector('#doses-pofa');
 const checkCi = document.querySelector('#ci-checkbox');
 const rootCss = document.querySelector(':root');
-const algoCardContainer = document.querySelector('.card3__titration__algorithm__container');
+const algoCardContainer = document.querySelector(
+  '.card3__titration__algorithm__container'
+);
 const dexdorButton = document.querySelector('.little-button');
 const inductionCard = document.querySelector('.card3__induction');
 const entretienCard = document.querySelector('.card3__entretien');
@@ -94,7 +96,9 @@ function finalCalcul(e) {
     dosesPOFA.innerHTML = `
       <li> - Ketamine: ${ketamine} mg soit ${ketamine / 10} ml</li>
       <li> - Lidocaine: ${lidocaine} mg soit ${lidocaine / 10} ml</li>
-      <li> - Magnesium : ${magnesium} g soit ${magnesium / 0.15} ml</li>
+      <li> - Magnesium : ${magnesium} g soit ${Math.round(
+      magnesium / 0.15
+    )} ml</li>
       <li> - Dexamethasone: ${dexa} mg soit ${dexa / 4} ml</li>
       `;
     debitSeringue.textContent = ivSpeed;
@@ -123,22 +127,21 @@ function roundTime(e) {
   console.log(e.target);
 }
 
-// fonction du bouton de l'algo pour le dexdor 
+// fonction du bouton de l'algo pour le dexdor
 // 1- ca lance le chrono si !running ou ca l'arrête si running en remettant le texte a "start 2 min"
 // TODO si lance le chrono affiche trois bouton rond : 1- fc < 40 = stop dexdor et discuter atropine 2- fc 45-70 et PAM OK ==> OK
 //3- PAM baisse de 20% = ascencion noradre 3a- si PAM OK et Fc OK ==> OK 3b- si PAM OK et FC encore > 70 = poursuivre
 
 function timerAlgo(e) {
   console.log(e.target.parentNode);
-  let roundTimer= e.target.parentNode;
-  if(roundTimer.classList.contains('timer2-running')) {
+  let roundTimer = e.target.parentNode;
+  if (roundTimer.classList.contains('timer2-running')) {
     roundTimer.classList.remove('timer2-running');
     roundTimer.innerHTML = `<p>Start<br>2min</p>
     <svg>
       <circle r="30" cx="32" cy="32"></circle>
-    </svg>`;   
-  }
-  else {
+    </svg>`;
+  } else {
     roundTimer.classList.add('timer2-running');
     roundTimer.innerHTML = `<p>Reset<br>2min</p>
     <svg>
@@ -150,13 +153,11 @@ function timerAlgo(e) {
 roundButton5.addEventListener('click', roundTime);
 roundButton2.addEventListener('click', timerAlgo);
 
-
-function validDexdor(e){
+function validDexdor(e) {
   console.log(e.target);
   algoCardContainer.classList.remove('visible');
   entretienCard.classList.add('visible');
   inductionCard.classList.add('visible');
-
 }
 
 dexdorButton.addEventListener('click', validDexdor);

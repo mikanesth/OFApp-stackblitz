@@ -1,94 +1,104 @@
 /*::::::::::::: carte pour rappeler la nécéssité monitorage et checklist ::::::::::::::::::*/
 .card3 {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
-.card3__checklist, .card3__POFA, .card3__titration, .card3__induction, .card3__entretien {
-    margin: auto;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    width: 90%;
-    box-shadow: var(--neu-big-input);
-    border: solid 4px var(--bg-color);
-    padding: 8px 0px;
+.card3__checklist,
+.card3__POFA,
+.card3__titration,
+.card3__induction,
+.card3__entretien {
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 90%;
+  box-shadow: var(--neu-big-input);
+  border: solid 4px var(--bg-color);
+  padding: 8px 0px;
 }
 
 .card3__checklist p {
-    margin: 0;
+  margin: 0;
 }
 
-.card3__POFA__innercontainer, .card3__titration__innercontainer  {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
+.card3__POFA__innercontainer,
+.card3__titration__innercontainer {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.card3__POFA__timer-text, .card3__titration__timer-text {
-    width: 70%;
+.card3__POFA__timer-text,
+.card3__titration__timer-text {
+  width: 70%;
 }
 
- /*:::::::::::::::::: STYLING DES TIMER ROND:::::::::::::::::::*/
+/*:::::::::::::::::: STYLING DES TIMER ROND:::::::::::::::::::*/
 
-.card3__POFA__innercontainer svg, .card3__titration__innercontainer svg  {
-    display: block;
-    transform: rotateY(-180deg) rotateZ(-90deg);
-    position: relative;
-    height: 64px;
-    width: 64px;
-  }
-  
-.round-timer5, .round-timer2 {
-    box-shadow: var(--neu-med-box);
-    background-color: var(--bg-color);
-    width: 64px;
-    height: 64px;
-    margin: auto;
-    display: block;
-    border-radius: 50%;
-    transition: 150ms;
-  }
-  
-.round-timer5:active, .round-timer2:active {
-    box-shadow: var(--neu-little-element);
-  }
-.round-timer5 p, .round-timer2 p {
-    display: block;
-    position: absolute;
-    margin-top: 0.8rem;
-    margin-left: 32px;
-    transform: translateX(-50%);
-  }
+.card3__POFA__innercontainer svg,
+.card3__titration__innercontainer svg {
+  display: block;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+  position: relative;
+  height: 64px;
+  width: 64px;
+}
 
-.card3__POFA__innercontainer svg circle, .card3__titration__innercontainer svg circle  {
-    stroke-dasharray: 186px;
+.round-timer5,
+.round-timer2 {
+  box-shadow: var(--neu-med-box);
+  background-color: var(--bg-color);
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  display: block;
+  border-radius: 50%;
+  transition: 150ms;
+}
+
+.round-timer5:active,
+.round-timer2:active {
+  box-shadow: var(--neu-little-element);
+}
+.round-timer5 p,
+.round-timer2 p {
+  display: block;
+  position: absolute;
+  margin-top: 0.8rem;
+  margin-left: 32px;
+  transform: translateX(-50%);
+}
+
+.card3__POFA__innercontainer svg circle,
+.card3__titration__innercontainer svg circle {
+  stroke-dasharray: 186px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 3px;
+  stroke: var(--green-valid);
+  fill: none;
+}
+
+.round-timer5 svg circle {
+  animation: rotate-countdown 300s linear forwards;
+}
+
+.timer2-running svg circle {
+  animation: rotate-countdown 120s linear forwards running;
+}
+@keyframes rotate-countdown {
+  0% {
     stroke-dashoffset: 0px;
-    stroke-linecap: round;
-    stroke-width: 3px;
-    stroke: var(--green-valid);
-    fill: none;
   }
+  100% {
+    stroke-dashoffset: 186px;
+  }
+}
 
-  .round-timer5 svg circle {
-    animation: rotate-countdown 300s linear forwards;
-  }
-  
-  .timer2-running svg circle {
-    animation: rotate-countdown 120s linear forwards running;
-
-  }
-  @keyframes rotate-countdown {
-    0% {
-      stroke-dashoffset: 0px;
-    }
-    100% {
-      stroke-dashoffset: 186px;
-    }
-  }
-
-  /*:::::::::::::::::::::: PARTIE SUR LA TITRATION DE LA DEXMEDETO :::::::::::::::::::::::*/
+/*:::::::::::::::::::::: PARTIE SUR LA TITRATION DE LA DEXMEDETO :::::::::::::::::::::::*/
 
 .card3__titration__timer-text:first-child {
   margin-top: 5px;
@@ -101,32 +111,30 @@
 /*::::::::::::: container des cartes des différentes situations après injection de dexdor :::::::::::::::::*/
 
 .card3__titration__algorithm__container {
-    margin-top: 5px;
-    /*border: 1px solid var(--black);*/
-    margin-bottom: 10px;
-    border-radius: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    transition: 200ms;
-    height: 0vh;
-    opacity: 0;
-
+  margin-top: 5px;
+  /*border: 1px solid var(--black);*/
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  transition: 200ms;
+  height: 0vh;
+  opacity: 0;
 }
 
-.card3__entretien, .card3__induction {
+.card3__entretien,
+.card3__induction {
   opacity: 0;
   transition: 200ms;
 }
 .visible {
-  height: auto; 
-  opacity: 1; 
+  height: auto;
+  opacity: 1;
 }
-
-
 
 .card3__algorithm__card {
   width: 25%;
@@ -134,7 +142,6 @@
   border-radius: 8px;
   box-shadow: 2px 2px 4px var(--neu-darker), -2px -2px 4px var(--neu-white);
 }
-
 
 .algorithm__card__situation {
   background-color: var(--light-red);
@@ -202,8 +209,3 @@
 }
 
 /*  :::::::: carte sur induction classique :::::::::::::  */
-
-
-
-
-
