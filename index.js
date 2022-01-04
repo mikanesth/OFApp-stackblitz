@@ -2,6 +2,8 @@ const inputs = document.querySelectorAll('input');
 const card1 = document.querySelector('.card1');
 const card2 = document.querySelector('.card2');
 const card3 = document.querySelector('.card3');
+const validationButton = document.querySelector('.button-mobile-valid');
+const returnButton = document.querySelectorAll('.button-mobile-return');
 let inputsArray = Array.from(inputs);
 const formOFA = document.querySelector('[name="POFA"]');
 let poidsIdeal;
@@ -108,6 +110,8 @@ function finalCalcul(e) {
     console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
     if (window.innerWidth < 400) {
       card1.classList.add('animate__fadeOutLeftBig');
+      card1.style.display ='none';
+      card2.style.display = 'block';
       card2.classList.add('animate__fadeInRightBig');
     }
   } else {
@@ -168,3 +172,42 @@ function validDexdor(e) {
 }
 
 dexdorButton.addEventListener('click', validDexdor);
+
+// Logique des boutons de la deuxieme carte bouton return fait revenir al carte 1
+// bouton validation fait apparaitre la carte 3
+function nextCard(e){
+  card2.classList.remove('animate__fadeInRightBig');
+  card2.classList.add('animate__fadeOutLeftBig');
+  card2.style.display = 'none';
+  card3.style.display = 'block';
+  card3.classList.add('animate__fadeInRightBig');
+}
+
+function prevCard(e){
+  const parentClasses = e.target.parentNode.classList;
+  console.log(parentClasses);
+  if(parentClasses.contains('card2')) {
+    card2.classList.remove('animate__fadeInRightBig');
+    card2.classList.add('animate__fadeOutRightBig');
+    card2.style.display ='none';
+    card1.style.display = 'block';
+    card1.classList.remove('animate__fadeOutLeftBig');
+    card1.classList.add('animate__fadeInLeftBig');
+    
+  } else {
+    console.log('clicker carte 3 return');
+    card3.classList.remove('animate__fadeInRightBig');
+    card3.classList.add('animate__fadeOutRightBig');
+    card2.style.display ='block';
+    card3.style.display ='none';
+    card2.classList.remove('animate__fadeOutLeftBig');
+    card2.classList.add('animate__fadeInLeftBig'); 
+  }
+}
+
+returnButton.forEach(e => {
+  e.addEventListener('click', prevCard);
+});
+validationButton.addEventListener('click', nextCard);
+
+

@@ -1,22 +1,65 @@
 /*::::::::::::: :::::::: iPhone size ::::::::::::::::::::::::::::::::::::*/
 @media screen and (max-width: 400px) {
+  html {
+    overflow: hidden;
+  }
+  /* faire disparaitre les ecritures du départ pour lisibilité sur écran téléphone*/
   .container__title {
     display: none;
   }
 
+/* repositionner le container des cartes */
   .data-container {
     align-items: center;
-    margin-top: 5vh;
+  }
+
+  .jumbo {
+    display: none;
+  }
+
+/*augmentare la taille des cartes pour que le bouton rentre dedans*/
+  .data-card {
+    max-height: 120vh; 
+  }
+
+  .card1 {
+    padding-bottom: 20px;
   }
   .card2,
   .card3 {
     opacity: 0;
-    height: 0;
+    display: none;
     transition: 200ms;
   }
 
   /*:::::::::::   bouton de validaiton du formulaire :::::::::*/
   #OFA-form input[type='submit'] {
-    width: 30vw;
+    width: 40vw;
+    padding: 5px;
+    font-size: 0.8rem;
   }
+
+  /*:::::::::::: carte 2 boutons de validations ou retour::::::::::::::*/
+
+  .button-mobile-return, .button-mobile-valid {
+    display: inline-block;
+    box-shadow: var(--neu-med-box);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin: 10px 10px 0px 10px;
+    color: var(--white);
+    border: 3px solid var(--bg-color);
+    font-size: 0.8rem;
+  }
+  .button-mobile-return {
+    background: var(--light-red);
+  }
+  .button-mobile-valid {
+    background-color: var(--green-valid);
+    color: var(--black);
+  }
+  .button-mobile-return:active, .mobile-button-valid:active {
+    box-shadow: var(--neu-little-element);
+  }
+
 }
