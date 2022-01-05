@@ -1,8 +1,60 @@
 /*::::::::::::: :::::::: iPhone size ::::::::::::::::::::::::::::::::::::*/
+
 @media screen and (max-width: 400px) {
   html {
     overflow: hidden;
   }
+
+  /*:::::: fullscreen de bienvenue qui explique l'application ::::::*/
+
+  .fullscreen-mobile-welcome {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: var(--bg-color);
+    margin: 0;
+    left: 0px;
+    top: 0px;
+    overflow-x: hidden;
+    text-align: center;
+  }
+
+  .title_paragraph1__mobile, .title_paragraph2__mobile, .title_paragraph3__mobile{
+    margin-top: 40px;
+  }
+
+.title_paragraph1__mobile::before,
+.title_paragraph2__mobile::before,
+.title_paragraph3__mobile::before {
+  right: 0%;
+  top: 0px;
+  font-size: 1rem;
+  background: var(--bg-color);
+  display: inline-block;
+  color: var(--white);
+  border-radius: 50%;
+  padding: 5px;
+  height: 20px;
+  min-width: 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
+}
+
+.title_paragraph3__mobile::before
+{
+  content: '3';
+}
+.title_paragraph2__mobile::before {
+  content: '2';
+}
+.title_paragraph1__mobile::before {
+  content: '1';
+}
+
+
   /* faire disparaitre les ecritures du départ pour lisibilité sur écran téléphone*/
   .container__title {
     display: none;
@@ -19,10 +71,11 @@
 
 /*augmentare la taille des cartes pour que le bouton rentre dedans*/
   .data-card {
-    max-height: 120vh; 
+    max-height: 120vh;
+    min-width: 320px;
   }
 
-  .card1 {
+  .card1, .card3 {
     padding-bottom: 20px;
   }
   .card2,
@@ -60,6 +113,26 @@
   }
   .button-mobile-return:active, .mobile-button-valid:active {
     box-shadow: var(--neu-little-element);
+  }
+
+  .button-welcome-mobile {
+    margin-top: 40px;
+    font-size: 1rem;
+  }
+
+  /*:::::::::::: carte 3 remise ne forme des carte de l'algo d'injection de la dexmedeto:::::::::::::*/
+  .visible .algorithm__card__reaction {
+    height: 12vh;
+    padding: 3px;
+    padding-bottom: 0px;
+  }
+  .little-button {
+    height: 7vh;
+    width: 15vw;
+    margin-top: 20px;
+  }
+  .algorithm__card__situation {
+    height: 5vh;
   }
 
 }

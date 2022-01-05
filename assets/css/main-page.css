@@ -16,6 +16,10 @@ ul {
   text-align: start;
 }
 
+.fullscreen-mobile-welcome {
+  display: none;
+}
+
 .jumbo {
   font-family: 'Lato', sans-serif;
   color: var(--black);
@@ -118,7 +122,7 @@ ul {
   max-height: 80vh;
   background: var(--bg-color);
   max-width: 30%;
-  min-width: 300px;
+  min-width: 380px;
   border-radius: 20px;
   text-align: center;
   box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)

@@ -28,6 +28,8 @@
   --neu-big-box: 8px 8px 18px #005d65, -8px -8px 18px #007d89;
   --neu-med-box: 6px 6px 12px #005d65, -6px -6px 12px #007d89;
   /*/ //////////////// VAR PSEUDO-ELEMENTS ////////////////////*/
+
+  --iPhone-screen : 400px;
 }
 
 /*///////////  ANIMATION CLASSES /////////////////////////*/

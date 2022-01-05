@@ -161,12 +161,16 @@ function timerAlgo(e) {
     algoCardContainer.classList.add('visible');
   }
 }
+
+
 roundButton5.addEventListener('click', roundTime);
 roundButton2.addEventListener('click', timerAlgo);
 
 function validDexdor(e) {
   console.log(e.target);
   algoCardContainer.classList.remove('visible');
+  entretienCard.style.display ='block';
+  inductionCard.style.display = 'block';
   entretienCard.classList.add('visible');
   inductionCard.classList.add('visible');
 }
@@ -176,11 +180,17 @@ dexdorButton.addEventListener('click', validDexdor);
 // Logique des boutons de la deuxieme carte bouton return fait revenir al carte 1
 // bouton validation fait apparaitre la carte 3
 function nextCard(e){
-  card2.classList.remove('animate__fadeInRightBig');
-  card2.classList.add('animate__fadeOutLeftBig');
-  card2.style.display = 'none';
-  card3.style.display = 'block';
-  card3.classList.add('animate__fadeInRightBig');
+  const parentEl = e.target.parentNode;
+  if(!parentEl.classList.contains('fullscreen-mobile-welcome')){
+    console.log('im here');
+    card2.classList.remove('animate__fadeInRightBig');
+    card2.classList.add('animate__fadeOutLeftBig');
+    card2.style.display = 'none';
+    card3.style.display = 'block';
+    card3.classList.add('animate__fadeInRightBig');
+  } else {
+    parentEl.classList.add('animate__fadeOutLeftBig');   
+  }
 }
 
 function prevCard(e){
@@ -209,5 +219,6 @@ returnButton.forEach(e => {
   e.addEventListener('click', prevCard);
 });
 validationButton.addEventListener('click', nextCard);
+
 
 
