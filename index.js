@@ -2,7 +2,7 @@ const inputs = document.querySelectorAll('input');
 const card1 = document.querySelector('.card1');
 const card2 = document.querySelector('.card2');
 const card3 = document.querySelector('.card3');
-const validationButton = document.querySelector('.button-mobile-valid');
+const validationButton = document.querySelectorAll('.button-mobile-valid');
 const returnButton = document.querySelectorAll('.button-mobile-return');
 let inputsArray = Array.from(inputs);
 const formOFA = document.querySelector('[name="POFA"]');
@@ -218,7 +218,11 @@ function prevCard(e){
 returnButton.forEach(e => {
   e.addEventListener('click', prevCard);
 });
-validationButton.addEventListener('click', nextCard);
+validationButton.forEach(e=> {
+  e.addEventListener('click', nextCard);
+});
+
+
 
 
 
