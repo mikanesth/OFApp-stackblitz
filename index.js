@@ -181,15 +181,14 @@ dexdorButton.addEventListener('click', validDexdor);
 // bouton validation fait apparaitre la carte 3
 function nextCard(e){
   const parentEl = e.target.parentNode;
-  if(!parentEl.classList.contains('fullscreen-mobile-welcome')){
-    console.log('im here');
+  if(parentEl.classList.contains('fullscreen-mobile-welcome')){
+    parentEl.classList.add('animate__fadeOutLeftBig');   
+  } else {
     card2.classList.remove('animate__fadeInRightBig');
     card2.classList.add('animate__fadeOutLeftBig');
     card2.style.display = 'none';
     card3.style.display = 'block';
     card3.classList.add('animate__fadeInRightBig');
-  } else {
-    parentEl.classList.add('animate__fadeOutLeftBig');   
   }
 }
 
