@@ -96,3 +96,8 @@
   color: var(--black);
   font-size: 0.7rem;
 }
+
+/*:::::::::::::: boutons pour le mobile exclusivemnt::::::::::::*/
+.button-mobile-return, .button-mobile-valid {
+  display: none;
+}

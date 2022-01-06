@@ -1,0 +1,138 @@
+/*::::::::::::: :::::::: iPhone size ::::::::::::::::::::::::::::::::::::*/
+
+@media screen and (max-width: 400px) {
+  html {
+    overflow: hidden;
+  }
+
+  /*:::::: fullscreen de bienvenue qui explique l'application ::::::*/
+
+  .fullscreen-mobile-welcome {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: var(--bg-color);
+    margin: 0;
+    left: 0px;
+    top: 0px;
+    overflow-x: hidden;
+    text-align: center;
+  }
+
+  .title_paragraph1__mobile, .title_paragraph2__mobile, .title_paragraph3__mobile{
+    margin-top: 40px;
+  }
+
+.title_paragraph1__mobile::before,
+.title_paragraph2__mobile::before,
+.title_paragraph3__mobile::before {
+  right: 0%;
+  top: 0px;
+  font-size: 1rem;
+  background: var(--bg-color);
+  display: inline-block;
+  color: var(--white);
+  border-radius: 50%;
+  padding: 5px;
+  height: 20px;
+  min-width: 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
+}
+
+.title_paragraph3__mobile::before
+{
+  content: '3';
+}
+.title_paragraph2__mobile::before {
+  content: '2';
+}
+.title_paragraph1__mobile::before {
+  content: '1';
+}
+
+
+  /* faire disparaitre les ecritures du départ pour lisibilité sur écran téléphone*/
+  .container__title {
+    display: none;
+  }
+
+/* repositionner le container des cartes */
+  .data-container {
+    align-items: center;
+  }
+
+  .jumbo {
+    display: none;
+  }
+
+/*augmentare la taille des cartes pour que le bouton rentre dedans*/
+  .data-card {
+    max-height: 120vh;
+    min-width: 320px;
+  }
+
+  .card1, .card3 {
+    padding-bottom: 20px;
+  }
+  .card2,
+  .card3 {
+    opacity: 0;
+    display: none;
+    transition: 200ms;
+  }
+
+  /*:::::::::::   bouton de validaiton du formulaire :::::::::*/
+  #OFA-form input[type='submit'] {
+    width: 40vw;
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+
+  /*:::::::::::: carte 2 boutons de validations ou retour::::::::::::::*/
+
+  .button-mobile-return, .button-mobile-valid {
+    display: inline-block;
+    box-shadow: var(--neu-med-box);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin: 10px 10px 0px 10px;
+    color: var(--white);
+    border: 3px solid var(--bg-color);
+    font-size: 0.8rem;
+  }
+  .button-mobile-return {
+    background: var(--light-red);
+  }
+  .button-mobile-valid {
+    background-color: var(--green-valid);
+    color: var(--black);
+  }
+  .button-mobile-return:active, .mobile-button-valid:active {
+    box-shadow: var(--neu-little-element);
+  }
+
+  .button-welcome-mobile {
+    margin-top: 40px;
+    font-size: 1rem;
+  }
+
+  /*:::::::::::: carte 3 remise ne forme des carte de l'algo d'injection de la dexmedeto:::::::::::::*/
+  .visible .algorithm__card__reaction {
+    height: 12vh;
+    padding: 3px;
+    padding-bottom: 0px;
+  }
+  .little-button {
+    height: 7vh;
+    width: 15vw;
+    margin-top: 20px;
+  }
+  .algorithm__card__situation {
+    height: 5vh;
+  }
+
+}

@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +15,29 @@
 
   <!-- ////////////// DEBUT DU BODY ////////////////////////: -->
   <body>
+    <div class="fullscreen-mobile-welcome">
+      <h1>Protocole OFA</h1>
+      <div class="ligne"></div>
+      <div class="container__title__mobile">
+        <div class="title_paragraph1__mobile">
+          <p>
+              Renseigner caractéristique du patient et vérifier l'absence de
+              contre-indication à la réalisation du protocle
+          </p>
+        </div>
+        <div class="title_paragraph2__mobile">
+          <p>
+              L'application vous donne les posologies pour la préparation du
+              plateau, du pochon d'OFA et la vitesse de perfusion de la seringue
+              Lido Keta
+          </p>
+        </div>
+        <div class="title_paragraph3__mobile">
+          <p>Descritption chronologique de l'anesthésie</p>
+        </div>
+      </div>
+      <button class="button-mobile-valid button-welcome-mobile">Débuter</button>
+    </div>
     <!-- ::::::::::::: BIG JUMBO DIV ::::::::::::::::::: -->
     <div class="jumbo">
       <h1>Protocole OFA</h1>
@@ -166,6 +189,8 @@
             <p><strong>Neurologique :</strong> Entropie, SPI, NMT</p>
           </div>
         </div>
+        <button class="button-mobile-return">Retour</button>
+        <button class="button-mobile-valid">Suivant</button>
       </div>
       <!-- //////////////////  CARTE DE PRESENTATION DU DEROULEMENT ////////////// -->
       <div class="data-card card3">
@@ -218,7 +243,7 @@
                 <span>FC &lt; 45</span>
               </div>
               <div class="algorithm__card__reaction">
-                Arrêt injection dexdor<br />Atropine 0.25 à 0.5mg
+                Arrêt dexdor<br />Atropine 0.25 à 0.5mg
               </div>
             </div>
             <div class="card3__algorithm__card cardOK">
@@ -267,6 +292,7 @@
             </li>
           </ul>
         </div>
+        <button class="button-mobile-return">Retour</button>
       </div>
     </div>
     <div id="text"></div>

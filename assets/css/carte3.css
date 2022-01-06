@@ -128,13 +128,17 @@
 
 .card3__entretien,
 .card3__induction {
+  display: none;
+  height: 0px;
   opacity: 0;
   transition: 200ms;
 }
+
 .visible {
   height: auto;
   opacity: 1;
 }
+
 
 .card3__algorithm__card {
   width: 25%;
