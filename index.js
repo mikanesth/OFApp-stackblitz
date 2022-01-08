@@ -107,7 +107,7 @@ function finalCalcul(e) {
       <li> - Dexamethasone: ${dexa} mg soit ${dexa / 4} ml</li>
       `;
     debitSeringue.textContent = ivSpeed;
-    console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
+    //console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
     if (window.innerWidth < 400) {
       card1.classList.add('animate__fadeOutLeftBig');
       card1.style.display ='none';
@@ -127,15 +127,12 @@ inputsArray.forEach((input) => {
   }
 });
 
-console.log(inputsArray);
-
 // all the logic for the simple round timer for POFA perfusion sur 5 min
 
 const roundButton5 = document.querySelector('.round-timer5');
 const roundButton2 = document.querySelector('.round-timer2');
 function roundTime(e) {
   e.target.firstChild.nextSibling.style.animationPlayState = 'running';
-  console.log(e.target);
 }
 
 // fonction du bouton de l'algo pour le dexdor
@@ -144,7 +141,6 @@ function roundTime(e) {
 //3- PAM baisse de 20% = ascencion noradre 3a- si PAM OK et Fc OK ==> OK 3b- si PAM OK et FC encore > 70 = poursuivre
 
 function timerAlgo(e) {
-  console.log(e.target.parentNode);
   let roundTimer = e.target.parentNode;
   if (roundTimer.classList.contains('timer2-running')) {
     roundTimer.classList.remove('timer2-running');
@@ -167,7 +163,6 @@ roundButton5.addEventListener('click', roundTime);
 roundButton2.addEventListener('click', timerAlgo);
 
 function validDexdor(e) {
-  console.log(e.target);
   algoCardContainer.classList.remove('visible');
   entretienCard.style.display ='block';
   inductionCard.style.display = 'block';
@@ -194,7 +189,6 @@ function nextCard(e){
 
 function prevCard(e){
   const parentClasses = e.target.parentNode.classList;
-  console.log(parentClasses);
   if(parentClasses.contains('card2')) {
     card2.classList.remove('animate__fadeInRightBig');
     card2.classList.add('animate__fadeOutRightBig');
@@ -204,7 +198,6 @@ function prevCard(e){
     card1.classList.add('animate__fadeInLeftBig');
     
   } else {
-    console.log('clicker carte 3 return');
     card3.classList.remove('animate__fadeInRightBig');
     card3.classList.add('animate__fadeOutRightBig');
     card2.style.display ='block';
