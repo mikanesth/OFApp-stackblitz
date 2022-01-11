@@ -1,6 +1,6 @@
 /*::::::::::::: :::::::: iPhone size ::::::::::::::::::::::::::::::::::::*/
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 414px) {
   html {
     overflow: hidden;
   }
@@ -21,46 +21,46 @@
     text-align: center;
   }
 
-  .title_paragraph1__mobile, .title_paragraph2__mobile, .title_paragraph3__mobile{
+  .title_paragraph1__mobile,
+  .title_paragraph2__mobile,
+  .title_paragraph3__mobile {
     margin-top: 40px;
   }
 
-.title_paragraph1__mobile::before,
-.title_paragraph2__mobile::before,
-.title_paragraph3__mobile::before {
-  right: 0%;
-  top: 0px;
-  font-size: 1rem;
-  background: var(--bg-color);
-  display: inline-block;
-  color: var(--white);
-  border-radius: 50%;
-  padding: 5px;
-  height: 20px;
-  min-width: 20px;
-  position: relative;
-  text-align: center;
-  box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
-}
+  .title_paragraph1__mobile::before,
+  .title_paragraph2__mobile::before,
+  .title_paragraph3__mobile::before {
+    right: 0%;
+    top: 0px;
+    font-size: 1rem;
+    background: var(--bg-color);
+    display: inline-block;
+    color: var(--white);
+    border-radius: 50%;
+    padding: 5px;
+    height: 20px;
+    min-width: 20px;
+    position: relative;
+    text-align: center;
+    box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
+  }
 
-.title_paragraph3__mobile::before
-{
-  content: '3';
-}
-.title_paragraph2__mobile::before {
-  content: '2';
-}
-.title_paragraph1__mobile::before {
-  content: '1';
-}
-
+  .title_paragraph3__mobile::before {
+    content: '3';
+  }
+  .title_paragraph2__mobile::before {
+    content: '2';
+  }
+  .title_paragraph1__mobile::before {
+    content: '1';
+  }
 
   /* faire disparaitre les ecritures du départ pour lisibilité sur écran téléphone*/
   .container__title {
     display: none;
   }
 
-/* repositionner le container des cartes */
+  /* repositionner le container des cartes */
   .data-container {
     align-items: center;
   }
@@ -69,13 +69,14 @@
     display: none;
   }
 
-/*augmentare la taille des cartes pour que le bouton rentre dedans*/
+  /*augmentare la taille des cartes pour que le bouton rentre dedans*/
   .data-card {
     max-height: 120vh;
     min-width: 320px;
   }
 
-  .card1, .card3 {
+  .card1,
+  .card3 {
     padding-bottom: 20px;
   }
   .card2,
@@ -94,7 +95,8 @@
 
   /*:::::::::::: carte 2 boutons de validations ou retour::::::::::::::*/
 
-  .button-mobile-return, .button-mobile-valid {
+  .button-mobile-return,
+  .button-mobile-valid {
     display: inline-block;
     box-shadow: var(--neu-med-box);
     border-radius: 8px;
@@ -111,7 +113,8 @@
     background-color: var(--green-valid);
     color: var(--black);
   }
-  .button-mobile-return:active, .mobile-button-valid:active {
+  .button-mobile-return:active,
+  .mobile-button-valid:active {
     box-shadow: var(--neu-little-element);
   }
 
@@ -134,5 +137,4 @@
   .algorithm__card__situation {
     height: 5vh;
   }
-
 }
