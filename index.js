@@ -108,9 +108,9 @@ function finalCalcul(e) {
       `;
     debitSeringue.textContent = ivSpeed;
     //console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
-    if (window.innerWidth < 400) {
+    if (window.innerWidth < 415) {
       card1.classList.add('animate__fadeOutLeftBig');
-      card1.style.display ='none';
+      card1.style.display = 'none';
       card2.style.display = 'block';
       card2.classList.add('animate__fadeInRightBig');
     }
@@ -158,13 +158,12 @@ function timerAlgo(e) {
   }
 }
 
-
 roundButton5.addEventListener('click', roundTime);
 roundButton2.addEventListener('click', timerAlgo);
 
 function validDexdor(e) {
   algoCardContainer.classList.remove('visible');
-  entretienCard.style.display ='block';
+  entretienCard.style.display = 'block';
   inductionCard.style.display = 'block';
   entretienCard.classList.add('visible');
   inductionCard.classList.add('visible');
@@ -174,10 +173,10 @@ dexdorButton.addEventListener('click', validDexdor);
 
 // Logique des boutons de la deuxieme carte bouton return fait revenir al carte 1
 // bouton validation fait apparaitre la carte 3
-function nextCard(e){
+function nextCard(e) {
   const parentEl = e.target.parentNode;
-  if(parentEl.classList.contains('fullscreen-mobile-welcome')){
-    parentEl.classList.add('animate__fadeOutLeftBig');   
+  if (parentEl.classList.contains('fullscreen-mobile-welcome')) {
+    parentEl.classList.add('animate__fadeOutLeftBig');
   } else {
     card2.classList.remove('animate__fadeInRightBig');
     card2.classList.add('animate__fadeOutLeftBig');
@@ -187,34 +186,28 @@ function nextCard(e){
   }
 }
 
-function prevCard(e){
+function prevCard(e) {
   const parentClasses = e.target.parentNode.classList;
-  if(parentClasses.contains('card2')) {
+  if (parentClasses.contains('card2')) {
     card2.classList.remove('animate__fadeInRightBig');
     card2.classList.add('animate__fadeOutRightBig');
-    card2.style.display ='none';
+    card2.style.display = 'none';
     card1.style.display = 'block';
     card1.classList.remove('animate__fadeOutLeftBig');
     card1.classList.add('animate__fadeInLeftBig');
-    
   } else {
     card3.classList.remove('animate__fadeInRightBig');
     card3.classList.add('animate__fadeOutRightBig');
-    card2.style.display ='block';
-    card3.style.display ='none';
+    card2.style.display = 'block';
+    card3.style.display = 'none';
     card2.classList.remove('animate__fadeOutLeftBig');
-    card2.classList.add('animate__fadeInLeftBig'); 
+    card2.classList.add('animate__fadeInLeftBig');
   }
 }
 
-returnButton.forEach(e => {
+returnButton.forEach((e) => {
   e.addEventListener('click', prevCard);
 });
-validationButton.forEach(e=> {
+validationButton.forEach((e) => {
   e.addEventListener('click', nextCard);
 });
-
-
-
-
-
