@@ -1,9 +1,9 @@
 /*::::::::::::: :::::::: iPhone size ::::::::::::::::::::::::::::::::::::*/
 
 @media screen and (max-width: 400px) {
-  html {
+  /*html {
     overflow: hidden;
-  }
+  }*/
 
   /*:::::: fullscreen de bienvenue qui explique l'application ::::::*/
 
