@@ -110,8 +110,8 @@ function finalCalcul(e) {
     //console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
     if (window.innerWidth < 415) {
       card1.classList.add('animate__fadeOutLeftBig');
-      card1.style.display = 'none';
-      card2.style.display = 'block';
+      card1.style.display ='none';
+      card2.style.display ='block';
       card2.classList.add('animate__fadeInRightBig');
     }
   } else {
