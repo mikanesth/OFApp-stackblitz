@@ -20,6 +20,12 @@
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c"/>
     <meta name="msapplication-config" content="/assets/img/browserconfig.xml"/>
+    <script>
+      window.addEventListener('load', ()=>{
+        if("serviceWorker" in navigator){
+          navigator.serviceWorker.register('/sw.js')
+        }});
+    </script>
   </head>
 
   <!-- ////////////// DEBUT DU BODY ////////////////////////: -->
