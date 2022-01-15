@@ -1,15 +1,15 @@
-const PREFIX = 'V1';
+const PREFIX = 'V3';
 
-const CACHED_FILES = ["./StyleSheet.css","./assets/css/carte1.css","./assets/css/carte2.css","./assets/css/carte3.css","./assets/css/main-page.css","./assets/css/responsive.css","./var.css","index.js","offline.html","./assets/img/perfusion.svg","./assets/img/favicon.ico"];
+const CACHED_FILES = ["./styles.css","./assets/css/carte1.css","./assets/css/carte2.css","./assets/css/carte3.css","./assets/css/main-page.css","./assets/css/responsive.css","./var.css","./index.js","./offline.html","./assets/img/perfusion.svg","./assets/img/favicon.ico"];
 
 self.addEventListener('install', (event)=>{
     self.skipWaiting();
-    event.waitUntil((async ()=>{
-        const cache = await caches.open(PREFIX);
-        await Promise.all(
-            CACHED_FILES.map(p => cache.add(new Request(p)))
-        );
-    })())
+    event.waitUntil(
+        caches.open(PREFIX).then((cache) => {
+              console.log('[Service Worker] Mise en cache globale: app shell et contenu');
+          return cache.addAll(CACHED_FILES);
+        })
+      );
     console.log(PREFIX + ' is installed');
 })
 self.addEventListener('activate', (e)=>{
