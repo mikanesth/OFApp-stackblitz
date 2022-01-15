@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>OFApp | Aide à l'OFA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <meta name="theme-color" content="#006d77"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#006d77">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c"/>
+    <meta name="msapplication-config" content="/assets/img/browserconfig.xml"/>
+  </head>
+
+  <!-- ////////////// DEBUT DU BODY ////////////////////////: -->
+  <body ontouchstart="">
+    <div class="fullscreen-mobile-welcome">
+      <h1>Protocole OFA</h1>
+      <div class="ligne"></div>
+      <div class="container__title__mobile">
+        <div class="title_paragraph1__mobile">
+          <p>
+              Renseigner caractéristique du patient et vérifier l'absence de
+              contre-indication à la réalisation du protocle
+          </p>
+        </div>
+        <div class="title_paragraph2__mobile">
+          <p>
+              L'application vous donne les posologies pour la préparation du
+              plateau, du pochon d'OFA et la vitesse de perfusion de la seringue
+              Lido Keta
+          </p>
+        </div>
+        <div class="title_paragraph3__mobile">
+          <p>Descritption chronologique de l'anesthésie</p>
+        </div>
+      </div>
+      <button class="button-mobile-valid button-welcome-mobile">Débuter</button>
+    </div>
+    <!-- ::::::::::::: BIG JUMBO DIV ::::::::::::::::::: -->
+    <div class="jumbo">
+      <h1>Protocole OFA</h1>
+      <div class="ligne"></div>
+      <div class="container__title">
+        <div class="title_paragraph1">
+          <p>
+            Renseigner caractéristique du patient et vérifier l'absence de
+            contre-indication à la réalisation du protocle
+          </p>
+        </div>
+        <div class="title_paragraph2">
+          <p>
+            L'application vous donne les posologies pour la préparation du
+            plateau, du pochon d'OFA et la vitesse de perfusion de la seringue
+            Lido Keta
+          </p>
+        </div>
+        <div class="title_paragraph3">
+          <p>Descritption chronologique de l'anesthésie</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ////////////  CONTAINER DE TOUTES LES CARTES  ///////// -->
+
+    <div class="data-container">
+      <!-- //////. CARTE FORMULAIRE D'ENTREE DES DONNEES  //////////-->
+      <div class="data-card card1">
+        <h3>Caractéristiques</h3>
+        <!-- ::::::::::: SOUS CARTE DE VALIDATION DES CONTRE-INDICATIONS ::::::::::::::::::: -->
+        <input type="checkbox" name="ci-checkbox" id="ci-checkbox" />
+        <div class="ci-card">
+          <div class="ci-text">
+            <label for="ci-checkbox">
+              <!-- <p>Valider</p> -->
+              <h4 id="ci-uncheck">Valider les contre-indications</h4>
+              <h4 id="ci-check">Contre-indications validées</h4>
+              <span class="ci-custom-checkbox"></span>
+            </label>
+
+            <ul>
+              <li>BAV niv. 2-3 ou ß-bloquant</li>
+              <li>DFG &lt; 30 (MgSO4)</li>
+              <li>Epilepsie (Lidocaine)</li>
+            </ul>
+          </div>
+        </div>
+        <!-- ::::::::::::::::::::: FORMULAIRE D'ENTREE DES CARACTERISTIQUES PATIENT :::::::::::::::::::: -->
+        <form name="POFA" id="OFA-form">
+          <label for="taille-input">Taille (en cm)</label>
+          <input
+            required
+            type="number"
+            min="100"
+            max="220"
+            name="taille"
+            id="taille-input"
+            placeholder="180"
+          />
+          <br />
+          <label for="poids-input">Poids (en Kg)</label>
+          <input
+            required
+            type="number"
+            min="30"
+            max="220"
+            name="poids"
+            id="poids-input"
+            placeholder="70"
+          />
+          <br />
+          <label for="women-radio"
+            >Femme<input
+              required
+              type="radio"
+              name="sexe"
+              id="women-radio" /><span></span
+          ></label>
+
+          <label for="men-radio"
+            >Homme<input
+              required
+              type="radio"
+              name="sexe"
+              id="men-radio" /><span></span
+          ></label>
+          <br />
+          <input type="submit" value="valider" />
+        </form>
+      </div>
+
+      <!--  //////////// CARTE DE PRESENTATION DE LA PREPARATION DU PLATEAU D'INDUCTION POUR L'OFA. /////////////////  -->
+      <div class="data-card card2">
+        <h3>Mon plateau d'induction</h3>
+        <div class="pofa-card">
+          <!-- ////////////// SOUS CARTE DE LA PREPARATION DU SOLUTE D'OFA OU POFA ///////////////////: -->
+
+          <div class="pastille-carte">Drogues OFA</div>
+          <!--  PASTILLE POUR CARACTÉRISER LA CARTE DE PREPARATION (OFA CLASSIQUE MONITORAGE)-->
+
+          <div class="pofa-card__flex-container">
+            <div class="pofa-card__inside-flex-container">
+              <img
+                src="./assets/img/perfusion.svg"
+                alt="un soluté de perfusion"
+              />
+              <p>Dans 100ml de<br />NaCl 0.9%</p>
+            </div>
+            <ul id="doses-pofa">
+              <li>- Ketamine:</li>
+              <li>- Lidocaine:</li>
+              <li>- Magnesium :</li>
+              <li>- Dexamethasone:</li>
+            </ul>
+          </div>
+          <!-- ///////////////////// SOUS CARTE DE LA PREPARATION DE LA DEXMEDETO /////////////////////////////// -->
+          <div class="dex-card">
+            <p>
+              <strong>Dexdor:</strong> 1 ampoule de 200&#x3BC;g (2ml) dans 18ml
+              SSI = seringue mère à 10&#x3BC;g/ml, en prélever 5ml dans seringue
+              de 5ml
+            </p>
+          </div>
+          <!-- ///////////////////// SOUS CARTE DE PREPARATION DE LA SERINGUE DE XYLO KETA//////////////////////////-->
+          <div class="xyloket-card inner-card">
+            <p>
+              <strong>Seringue Lido ketamine</strong>: 40ml Lido 2%, 5ml keta
+              (50mg)
+            </p>
+          </div>
+        </div>
+
+        <div class="container_classic-drugs">
+          <div class="pastille-carte">"Classiques"</div>
+          <!-- /////////////////// SOUS CARTE DE PREPARATION DES DROGUES "CALSSIQUES" ////////////////////// -->
+          <div class="classic-drug-card inner-card">
+            <p><strong>Sufentanil:</strong> seringue de 50µg</p>
+            <p><strong>Propofol:</strong> QSP 2 à 3 mg/kg</p>
+            <p><strong>Noradrénaline:</strong> seringue à 20µg/ml</p>
+          </div>
+        </div>
+        <div class="container_monito">
+          <div class="pastille-carte">Monitorage</div>
+          <!-- /////////////////// SOUS CARTE PREPARATION MONITORAGE ////////////////////////-->
+          <div class="monito-card inner-card">
+            <p><strong>Hémodynamique:</strong> FC PAM +/- débit cardiaque</p>
+            <p><strong>Respiratoire :</strong> SpO2</p>
+            <p><strong>Neurologique :</strong> Entropie, SPI, NMT</p>
+          </div>
+        </div>
+        <button class="button-mobile-return">Retour</button>
+        <button class="button-mobile-valid">Suivant</button>
+      </div>
+      <!-- //////////////////  CARTE DE PRESENTATION DU DEROULEMENT ////////////// -->
+      <div class="data-card card3">
+        <h3>Déroulement</h3>
+        <!-- :::::::::::::: CARTE DE RAPPEL SUR CHECKLIST ::::::::::::::::::: -->
+        <div class="card3__checklist">
+          <div class="pastille-carte">checklist</div>
+          <p>Monitorage complet + checklist HAS</p>
+        </div>
+        <!-- ::::::::::::::::: CARTE DU TIMER POUR PERFUSION DU POCHON OFA :::::::::::::::::::::: -->
+        <div class="card3__POFA">
+          <div class="pastille-carte">POFA</div>
+          <div class="card3__POFA__innercontainer">
+            <div class="card3__POFA__timer-text">
+              <p>Perfuser le soluté POFA sur 5 minutes</p>
+              <p>Utiliser le timer à droite si besoin</p>
+            </div>
+            <div class="round-timer5">
+              <p>Start<br />5min</p>
+              <svg>
+                <circle
+                  r="30"
+                  cx="32"
+                  cy="32"
+                  style="animation-play-state: paused"
+                ></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- :::::::::::::::::::::::::: CARTE SUR LA TITRATION DE LA DESMEDETO ::::::::::::: -->
+        <div class="card3__titration">
+          <div class="pastille-carte">Titration Dexdor</div>
+          <div class="card3__titration__innercontainer">
+            <div class="card3__titration__timer-text">
+              <p>1-Démarrer la noradrénaline 20µg à √10</p>
+              <p>2-Dexdor 10µg (1ml) / 2 min QSP Fc [50-70]</p>
+              <p>3- Démarrer timer et suivre l'algorithme</p>
+            </div>
+            <div class="round-timer2">
+              <p>Start<br />2min</p>
+              <svg>
+                <circle r="30" cx="32" cy="32"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="card3__titration__algorithm__container">
+            <div class="card3__algorithm__card">
+              <div class="algorithm__card__situation">
+                <span>FC &lt; 45</span>
+              </div>
+              <div class="algorithm__card__reaction">
+                Arrêt dexdor<br />Atropine 0.25 à 0.5mg
+              </div>
+            </div>
+            <div class="card3__algorithm__card cardOK">
+              <div class="algorithm__card__situation situationOK">
+                <span>FC [50-70]<br />PAM OK</span>
+              </div>
+              <div class="algorithm__card__reaction reactionOK">
+                <button class="little-button">Suivant</button>
+              </div>
+            </div>
+            <div class="card3__algorithm__card">
+              <div class="algorithm__card__situation">
+                <span>PAM &#8595; 20%</span>
+              </div>
+              <div class="algorithm__card__reaction">
+                Boli de NAD<br />ou<br />&#8593; débit
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ::::::::::::::::::::::: CARTE SUR INDUCTION CLASSIQUE ::::::::::::::::::::: -->
+        <div class="card3__induction">
+          <div class="pastille-carte">Induction</div>
+          <p>
+            Propofol / Curare et IOT (selon entropy et FC) +/- sufentanil (5µg)
+            en recours
+          </p>
+        </div>
+
+        <!-- :::::::::::::::: CARTE SUR L'ENTRETIEN DE L'ANESTHESIE ::::::::::::::::: -->
+        <div class="card3__entretien">
+          <div class="pastille-carte">Entretien</div>
+          <ul>
+            <li>
+              Dexdor: 10µg (1ml) avant incision puis horaire QSP FC[50-70]
+            </li>
+            <li>
+              Seringue Keta / Lido :
+
+              <strong><span id="debit-seringue"></span> ml/h </strong>
+            </li>
+            <li>
+              Sevo ou Propofol - Sufentanil si besoin -
+              <strong>pas de bolus de morphine</strong>
+            </li>
+          </ul>
+        </div>
+        <button class="button-mobile-return">Retour</button>
+      </div>
+    </div>
+    <div id="text"></div>
+    <div id="dosesPOFA"></div>
+  </body>
+  <script src="/index.js"></script>
+</html>
