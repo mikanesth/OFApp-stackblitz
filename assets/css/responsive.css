@@ -87,6 +87,9 @@
   }
 
   /*:::::::::::   bouton de validaiton du formulaire :::::::::*/
+  #OFA-form {
+    height: auto;
+  }
   #OFA-form input[type='submit'] {
     width: 40vw;
     padding: 5px;
