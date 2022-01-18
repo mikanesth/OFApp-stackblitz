@@ -1,4 +1,4 @@
-const cacheVersion = "V6";
+const cacheVersion = "V1.0";
 
 const cachedFiles = [
   "./styles.css",
@@ -14,18 +14,22 @@ const cachedFiles = [
   "./assets/img/favicon.ico",
 ];
 
+//installation du sw avec mise en cache des documents des l'installation le fetch completera la mise en cache des fonts
 self.addEventListener("install", (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(cacheVersion).then((cache) => {
       console.log(
-        "[Service Worker] Mise en cache globale: app shell et contenu"
+        "[Service Worker] Mise en cache globale de l'app et contenu statique working 100% offline"
       );
       return cache.addAll(cachedFiles);
     })
   );
   console.log(cacheVersion + " is installed");
 });
+
+//activation de la version du sw avec destruction des caches précédents
+
 self.addEventListener("activate", (e) => {
   clients.claim();
   e.waitUntil(
@@ -43,25 +47,7 @@ self.addEventListener("activate", (e) => {
   console.log(cacheVersion + " is active");
 });
 
-// self.addEventListener('fetch', (e)=>{
-//     //console.log(e);
-//     if(e.request.mode == 'navigate'){
-//         e.respondWith((async ()=>{
-//             try {
-//             const preloadResponse = await e.preloadResponse;
-//             if(preloadResponse){
-//                 return preloadResponse;
-//             }
-//             return await fetch(e.request);
-//         } catch(e){
-//             const cache = await caches.open(cacheVersion);
-//             return await cache.match('./offline.html');
-//         }
-//         })());
-//     } else if(cachedFiles.includes(e.request.url)){
-//         e.respondWith(caches.match(e.request));
-//     }
-// })
+// gestion des fetch avec proposition des versions en cache en premier 
 
 self.addEventListener("fetch", (e) => {
   e.respondWith(
