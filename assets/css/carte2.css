@@ -1,5 +1,6 @@
 .card2 {
   max-height: 100vh;
+  max-width: 20vw;
   box-sizing: content-box;
   padding-bottom: 20px;
 }
@@ -21,6 +22,10 @@
   margin-bottom: 20px;
 }
 
+.classic-drug-card p {
+  margin-bottom: 15px
+}
+
 .classic-drug-card strong {
   padding: 3px;
   border-radius: 3px;
@@ -36,8 +41,20 @@
 .classic-drug-card :nth-child(2) strong {
   background-color: rgb(255, 255, 43);
 }
-.classic-drug-card :last-child strong {
+
+.classic-drug-card :nth-child(3) strong {
+  background-color: rgb(255,0,0);
+  color: rgb(255, 250, 250);
+}
+.classic-drug-card :nth-child(4) strong {
   background-color: rgb(222, 191, 217);
+}
+
+.classic-drug-card :nth-child(5) strong {
+  color: var(--white)
+}
+.classic-drug-card :nth-child(6) strong {
+  color: var(--white)
 }
 
 .pofa-card ul {

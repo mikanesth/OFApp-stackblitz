@@ -16,9 +16,14 @@
   padding: 8px 0px;
 }
 
-.card3__checklist p {
-  margin: 0;
+.card3__checklist  {
+  text-align: left;
+  & item{
+    margin-left: 3vw;
+  }
 }
+
+
 
 .card3__POFA__innercontainer,
 .card3__titration__innercontainer {
@@ -87,7 +92,7 @@
 }
 
 .timer2-running svg circle {
-  animation: rotate-countdown 120s linear forwards running;
+  animation: rotate-countdown 300s linear forwards running;
 }
 @keyframes rotate-countdown {
   0% {
@@ -122,21 +127,19 @@
   justify-content: space-around;
   align-items: flex-start;
   transition: 200ms;
-  height: 0vh;
-  opacity: 0;
+  height: auto;
 }
 
 .card3__entretien,
 .card3__induction {
-  display: none;
-  height: 0px;
-  opacity: 0;
+  display: block;
   transition: 200ms;
-}
-
-.visible {
   height: auto;
   opacity: 1;
+}
+
+.card3__induction, .card3__titration{
+  display: none;
 }
 
 
@@ -145,6 +148,7 @@
   border: 3px solid var(--light-red);
   border-radius: 8px;
   box-shadow: 2px 2px 4px var(--neu-darker), -2px -2px 4px var(--neu-white);
+  height: auto;
 }
 
 .algorithm__card__situation {
@@ -164,16 +168,12 @@
 
 .algorithm__card__reaction {
   padding: 5px;
-  height: 0vh;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   /*border: 2px solid var(--light-red);*/
   border-top: none;
   transition: 200ms;
-}
-
-.visible .algorithm__card__reaction {
-  height: 7vh;
+  height: 7vh
 }
 
 .cardOK {
@@ -185,6 +185,11 @@
 }
 .situationOK span {
   color: var(--black);
+  top: 2.5vh;
+}
+
+.reactionOK{
+  height: 5vh
 }
 
 /* bouton de validation de la bonne titration du dexdor */

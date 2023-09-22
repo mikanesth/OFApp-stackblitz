@@ -32,12 +32,12 @@
   <!-- ////////////// DEBUT DU BODY ////////////////////////: -->
   <body ontouchstart="">
     <div class="fullscreen-mobile-welcome">
-      <h1>Protocole OFA</h1>
+      <h1>Protocole DexCoeur</h1>
       <div class="ligne"></div>
       <div class="container__title__mobile">
         <div class="title_paragraph1__mobile">
           <p>
-              Renseigner caractéristique du ou de la patient(e)
+              Renseigner caractéristique du ou de la patient(e) ainsi que son statut de randomisation
           </p>
         </div>
         <div class="title_paragraph2__mobile">
@@ -55,12 +55,12 @@
     </div>
     <!-- ::::::::::::: BIG JUMBO DIV ::::::::::::::::::: -->
     <div class="jumbo">
-      <h1>Protocole OFA</h1>
+      <h1>Protocole DexCoeur</h1>
       <div class="ligne"></div>
       <div class="container__title">
         <div class="title_paragraph1">
           <p>
-            Renseigner caractéristique du / de la patient(e)
+            Renseigner caractéristique du / de la patient(e) ainsi que son statut de randomisation
           </p>
         </div>
         <div class="title_paragraph2">
@@ -79,15 +79,18 @@
     <!-- ////////////  CONTAINER DE TOUTES LES CARTES  ///////// -->
 
     <div class="data-container">
+
       <!-- //////. CARTE FORMULAIRE D'ENTREE DES DONNEES  //////////-->
       <div class="data-card card1">
         <h3>Caractéristiques</h3>
+
         <!-- ::::::::::: SOUS CARTE DE VALIDATION DES CONTRE-INDICATIONS ::::::::::::::::::: -->
-        <input type="checkbox" name="ofa-checkbox" id="ofa-checkbox" />
-        <input type="checkbox" name="suf-checkbox" id="suf-checkbox"/>
-        <div class="random-card">
-          
+        <p id="random-status-title">Statut de randomisation</p>
+        <div class="random-card-container">
+          <div class="random-card" id="ofa">OFA</div>
+          <div class="random-card" id="suf">SUF</div>
         </div>
+
         <!-- ::::::::::::::::::::: FORMULAIRE D'ENTREE DES CARACTERISTIQUES PATIENT :::::::::::::::::::: -->
         <form name="POFA" id="OFA-form">
           <label for="taille-input">Taille (en cm)</label>
@@ -159,9 +162,7 @@
           <!-- ///////////////////// SOUS CARTE DE LA PREPARATION DE LA DEXMEDETO /////////////////////////////// -->
           <div class="dex-card">
             <p>
-              <strong>Dexdor:</strong> 1 ampoule de 200&#x3BC;g (2ml) dans 18ml
-              SSI = seringue mère à 10&#x3BC;g/ml, en prélever 5ml dans seringue
-              de 5ml
+              <strong>Dexdor:</strong>Attente de randomisation
             </p>
           </div>
           <!-- ///////////////////// SOUS CARTE DE PREPARATION DE LA SERINGUE DE XYLO KETA//////////////////////////-->
@@ -179,28 +180,28 @@
           <div class="classic-drug-card inner-card">
             <p><strong>Sufentanil:</strong> seringue de 50µg</p>
             <p><strong>Propofol:</strong> QSP 2 à 3 mg/kg</p>
+            <p><strong>Curare:</strong> possible, au choix </p>
             <p><strong>Noradrénaline:</strong> seringue à 20µg/ml</p>
+            <p><strong>Soluté:</strong> au choix</p>
+            <p><strong>ALR:</strong> réalisable dans le protocole </p>
+
+
           </div>
         </div>
-        <div class="container_monito">
-          <div class="pastille-carte">Monitorage</div>
-          <!-- /////////////////// SOUS CARTE PREPARATION MONITORAGE ////////////////////////-->
-          <div class="monito-card inner-card">
-            <p><strong>Hémodynamique:</strong> FC PAM +/- débit cardiaque</p>
-            <p><strong>Respiratoire :</strong> SpO2</p>
-            <p><strong>Neurologique :</strong> Entropie, SPI, NMT</p>
-          </div>
-        </div>
-        <button class="button-mobile-return">Retour</button>
-        <button class="button-mobile-valid">Suivant</button>
       </div>
-      <!-- //////////////////  CARTE DE PRESENTATION DU DEROULEMENT ////////////// -->
+
+
+      <!-- //////////////////  CARTE DE PRESENTATION DE L'INDUCTION ////////////// -->
       <div class="data-card card3">
-        <h3>Déroulement</h3>
+        <h3>Induction</h3>
         <!-- :::::::::::::: CARTE DE RAPPEL SUR CHECKLIST ::::::::::::::::::: -->
         <div class="card3__checklist">
           <div class="pastille-carte">checklist</div>
-          <p>Monitorage complet + checklist HAS</p>
+          <item><input type="checkbox" name="bis" id="bis">  <strong>BIS (nécessaire)</strong> </item>
+          <item><input type="checkbox" name="SPI" id="SPI">  <strong>SPI (nécessaire)</strong> </item>
+          <item><input type="checkbox" name="nmt" id="nmt">  <strong>NMT (nécessaire)</strong> </item>
+          <item><input type="checkbox" name="standard" id="standard">  Monitorage standard (ECG, PNI, SpO2) </item>
+          <item><input type="checkbox" name="checklist" id="checklist">  Checklist HAS </item>
         </div>
         <!-- ::::::::::::::::: CARTE DU TIMER POUR PERFUSION DU POCHON OFA :::::::::::::::::::::: -->
         <div class="card3__POFA">
@@ -228,12 +229,12 @@
           <div class="pastille-carte">Titration Dexdor</div>
           <div class="card3__titration__innercontainer">
             <div class="card3__titration__timer-text">
-              <p>1-Démarrer la noradrénaline 20µg à √10</p>
-              <p>2-Dexdor 10µg (1ml) / 2 min QSP Fc [50-70]</p>
-              <p>3- Démarrer timer et suivre l'algorithme</p>
+              <p>1-Démarrer la noradrénaline 20µg à √10 (optionnel)</p>
+              <p>2-Dexdor 10µg (1ml) / 1 min QSP Fc [50-70]</p>
+              <p>3-Titrer <strong>sur 5 min</strong> dose <strong>max 50µg</strong></p>
             </div>
             <div class="round-timer2">
-              <p>Start<br />2min</p>
+              <p>Start<br />5min</p>
               <svg>
                 <circle r="30" cx="32" cy="32"></circle>
               </svg>
@@ -245,23 +246,23 @@
                 <span>FC &lt; 45</span>
               </div>
               <div class="algorithm__card__reaction">
-                Arrêt dexdor<br />Atropine 0.25 à 0.5mg
+                Arrêt dexdor<br />Atropine
               </div>
             </div>
             <div class="card3__algorithm__card cardOK">
               <div class="algorithm__card__situation situationOK">
-                <span>FC [50-70]<br />PAM OK</span>
+                <span>FC [45-50]<br />PAM OK <br/>ou dose max</span>
               </div>
               <div class="algorithm__card__reaction reactionOK">
-                <button class="little-button">Suivant</button>
+                Continuer induction
               </div>
             </div>
             <div class="card3__algorithm__card">
               <div class="algorithm__card__situation">
-                <span>PAM &#8595; 20%</span>
+                <span>PAM &#8595; 20% ou < 60</span>
               </div>
               <div class="algorithm__card__reaction">
-                Boli de NAD<br />ou<br />&#8593; débit
+                NAD<br />ou<br />Ephedrine
               </div>
             </div>
           </div>
@@ -271,13 +272,17 @@
         <div class="card3__induction">
           <div class="pastille-carte">Induction</div>
           <p>
-            Propofol / Curare et IOT (selon entropy et FC) +/- sufentanil (5µg)
-            en recours
+            Induction classique Sufentanil, Propofol +/- Curare
+            Gestion des voies aeriennes: IOT ou ML
           </p>
         </div>
+      </div>  
+        
 
-        <!-- :::::::::::::::: CARTE SUR L'ENTRETIEN DE L'ANESTHESIE ::::::::::::::::: -->
-        <div class="card3__entretien">
+      <!-- ::::::::::::::::::: CARTE SUR ENTRETIEN DE ANESTHESIE :::::::::::::::::::::::::::-->
+      <div class="data-card card4">
+        <h3>Entretien</h3>
+        <div class="card4__entretien">
           <div class="pastille-carte">Entretien</div>
           <ul>
             <li>
@@ -295,6 +300,7 @@
           </ul>
         </div>
         <button class="button-mobile-return">Retour</button>
+      </div>
       </div>
     </div>
     <div id="text"></div>

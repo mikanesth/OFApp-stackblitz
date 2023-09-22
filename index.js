@@ -13,11 +13,34 @@ const rootCss = document.querySelector(':root');
 const algoCardContainer = document.querySelector(
   '.card3__titration__algorithm__container'
 );
-const dexdorButton = document.querySelector('.little-button');
 const inductionCard = document.querySelector('.card3__induction');
-const entretienCard = document.querySelector('.card3__entretien');
+const entretienCard = document.querySelector('.card4');
+const titrationCard = document.querySelector('.card3__titration');
+const dexCard = document.querySelector('.dex-card');
 let ivSpeed;
 const debitSeringue = document.querySelector('#debit-seringue');
+
+//gestion du status de randomisation dans l'étude //
+
+let randomStatusButton = document.querySelectorAll('.random-card');
+let randomStatus = 'none';
+
+randomStatusButton.forEach(status => {
+  status.addEventListener('click', (e)=>{
+    randomStatus = e.target.id
+    randomStatusButton.forEach(button => {
+        button.style.backgroundColor = '#006d77'
+        e.target.style.backgroundColor = '#83c5be';
+        if(randomStatus == button.id){
+          button.style.boxShadow = '1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white)'
+        } else {
+          button.style.boxShadow = 'var(--neu-button-color)'
+        }
+    }
+    )
+    console.log(randomStatus)
+  })
+})
 
 function checkNumbers(e) {
   //tablette.textContent = '';
@@ -85,6 +108,17 @@ function dexaCalc(p) {
 
 function finalCalcul(e) {
   e.preventDefault();
+  if(randomStatus == 'none'){
+    alert('Randomisation nécéssaire')
+  } else {
+    if(randomStatus == 'suf'){
+      titrationCard.style.display = 'none';
+      inductionCard.style.display = 'block'
+    }
+    if(randomStatus == 'ofa'){
+      titrationCard.style.display = 'block';
+      inductionCard.style.display = 'none';
+    }
     let taille = e.target[0].value;
     let tailleMetre = taille / 100;
     let poids = e.target[1].value;
@@ -105,6 +139,22 @@ function finalCalcul(e) {
       <li> - Dexamethasone: ${dexa} mg soit ${dexa / 4} ml</li>
       `;
     debitSeringue.textContent = ivSpeed;
+    if(randomStatus == 'ofa'){
+      dexCard.innerHTML = `
+      <p>
+              <strong>Dexdor:</strong> 1 ampoule de 200&#x3BC;g (2ml) dans 18ml
+              SSI = seringue mère à 10&#x3BC;g/ml, en prélever 5ml dans seringue
+              de 5ml
+            </p>
+      `
+    } else {
+      dexCard.innerHTML = `
+      <p>
+      <strong>Dexdor:</strong> NON
+    </p>
+      `
+    }
+  }
     //console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);
     if (window.innerWidth < 415) {
       card1.classList.add('animate__fadeOutLeftBig');
@@ -139,13 +189,13 @@ function timerAlgo(e) {
   let roundTimer = e.target.parentNode;
   if (roundTimer.classList.contains('timer2-running')) {
     roundTimer.classList.remove('timer2-running');
-    roundTimer.innerHTML = `<p>Start<br>2min</p>
+    roundTimer.innerHTML = `<p>Start<br>5min</p>
     <svg>
       <circle r="30" cx="32" cy="32"></circle>
     </svg>`;
   } else {
     roundTimer.classList.add('timer2-running');
-    roundTimer.innerHTML = `<p>Reset<br>2min</p>
+    roundTimer.innerHTML = `<p>Reset<br>5min</p>
     <svg>
       <circle r="30" cx="32" cy="32"></circle>
     </svg>`;
@@ -156,13 +206,6 @@ function timerAlgo(e) {
 roundButton5.addEventListener('click', roundTime);
 roundButton2.addEventListener('click', timerAlgo);
 
-function validDexdor(e) {
-  algoCardContainer.classList.remove('visible');
-  entretienCard.style.display = 'block';
-  inductionCard.style.display = 'block';
-  entretienCard.classList.add('visible');
-  inductionCard.classList.add('visible');
-}
 
 dexdorButton.addEventListener('click', validDexdor);
 

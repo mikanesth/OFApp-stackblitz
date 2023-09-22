@@ -1,10 +1,39 @@
-/*/////////////. CARTE DE VALIDATION DES CONTRE-INDICATIONS DANS CARTE DES CARACTERISTIQUES ////////*/
+/*/////////////. CARTE DE VALIDATION DE LA RANDOMISATION ////////*/
 
 .card1 {
   max-width: 300px;
   min-width: 280px;
   max-height: 60vh;
   opacity: 1;
+}
+
+.random-status-title{
+  margin-bottom: 25px
+}
+
+.random-card-container{
+  display: flex;
+  margin: auto;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+}
+
+.random-card{
+  border: solid 2px var(--bg-color);
+  height: 5vh;
+  max-height: 20px;
+  width: 10vw;
+  max-width: 100px;
+  display: block;
+  margin: auto;
+  border-radius: 15px;
+  background: var(--neu-button-bg);
+  box-shadow: var(--neu-button-color);
+  &:hover {
+    box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
+  }
 }
 
 /* /////////////// TEXTE DES CONTRE INDICATIONS //////////////////////*/
@@ -37,7 +66,8 @@
   color: var(--white);
   border: 1px solid var(--bg-color);
   box-shadow: var(--neu-little-input);
-  margin-left: 20px
+  margin-left: 20px;
+  padding-left: 10px
 }
 
 #OFA-form input[type='number']::placeholder {

@@ -1,0 +1,6 @@
+.card4 {
+    max-height: 100vh;
+    max-width: 20vw;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+}
