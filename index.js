@@ -9,7 +9,6 @@ const formOFA = document.querySelector('[name="POFA"]');
 let poidsIdeal;
 let Bmi;
 const dosesPOFA = document.querySelector('#doses-pofa');
-const checkCi = document.querySelector('#ci-checkbox');
 const rootCss = document.querySelector(':root');
 const algoCardContainer = document.querySelector(
   '.card3__titration__algorithm__container'
@@ -86,7 +85,6 @@ function dexaCalc(p) {
 
 function finalCalcul(e) {
   e.preventDefault();
-  if (checkCi.checked) {
     let taille = e.target[0].value;
     let tailleMetre = taille / 100;
     let poids = e.target[1].value;
@@ -114,9 +112,6 @@ function finalCalcul(e) {
       card2.style.display ='block';
       card2.classList.add('animate__fadeInRightBig');
     }
-  } else {
-    alert('Validez les contre-indications SVP');
-  }
 }
 
 formOFA.addEventListener('submit', finalCalcul);

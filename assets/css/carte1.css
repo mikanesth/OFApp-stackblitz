@@ -1,19 +1,5 @@
 /*/////////////. CARTE DE VALIDATION DES CONTRE-INDICATIONS DANS CARTE DES CARACTERISTIQUES ////////*/
 
-.ci-card {
-  padding-top: 8px;
-  margin: auto;
-  border-radius: 10px;
-  background: var(--light-red);
-  width: 90%;
-  min-height: 20px;
-  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
-      var(--neu-darker),
-    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
-      var(--neu-white);
-  border: solid 4px var(--bg-color);
-}
-
 .card1 {
   max-width: 300px;
   min-width: 280px;
@@ -23,99 +9,7 @@
 
 /* /////////////// TEXTE DES CONTRE INDICATIONS //////////////////////*/
 
-.ci-text {
-  display: block;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-}
 
-.ci-text ul {
-  text-align: left;
-  font-size: 0.8rem;
-  padding-left: 20px;
-}
-
-.ci-text h4 {
-  display: inline;
-  text-align: left;
-  margin-left: 5px;
-  font-size: 0.9rem;
-}
-
-/*////////////////// validation des contre indications //////////////////*/
-
-.ci-card input {
-  opacity: 1;
-  display: none;
-}
-/*////////// case validation custom /////////*/
-
-.ci-custom-checkbox {
-  display: inline-block;
-  height: 18px;
-  width: 18px;
-  border-radius: 5px;
-  background-color: var(--bg-color);
-  box-shadow: var(--neu-little-input);
-  margin-left: 10px;
-  position: relative;
-  top: 5px;
-}
-
-/*///////// LOGIQUE SURVOL ET CHECKED CHECKBOX STYLES */
-
-.ci-text label p:hover + span {
-  box-shadow: inset 2px 2px 4px #c95b4d, inset -2px -2px 4px #ff7b68;
-}
-.ci-text label span:hover {
-  transition: 150ms;
-  box-shadow: var(--neu-input-green);
-  background: var(--green-valid);
-}
-.ci-custom-checkbox::before {
-  content: '';
-  display: block;
-  position: absolute;
-  height: 8px;
-  width: 16px;
-  border-bottom: solid 3px var(--black);
-  border-left: solid 3px var(--black);
-  transform: rotate(-45deg);
-  opacity: 0;
-  transition: 150ms;
-}
-#ci-checkbox:checked + .ci-card > .ci-text label span::before {
-  opacity: 1;
-}
-
-#ci-checkbox:checked + .ci-card > .ci-text label span {
-  /*border: 1px solid var(--green-valid);*/
-  background: var(--green-valid);
-  box-shadow: var(--neu-input-green);
-}
-
-#ci-checkbox:checked + .ci-card {
-  background-color: var(--green-valid);
-}
-#ci-checkbox:checked + .ci-card > .ci-text h4,
-#ci-checkbox:checked + .ci-card > .ci-text ul li {
-  color: var(--black);
-}
-
-#ci-checkbox {
-  display: none;
-}
-
-#ci-check,
-#ci-checkbox:checked + .ci-card > .ci-text #ci-uncheck {
-  display: none;
-}
-
-#ci-uncheck,
-#ci-checkbox:checked + .ci-card > .ci-text #ci-check {
-  display: inline;
-}
 
 /*:::::::::::::::::: MISE EN FORME DU FORMULAIRE ::::::::::::::::::*/
 
@@ -130,6 +24,7 @@
 
 #OFA-form label {
   margin-bottom: 5px;
+  margin-left: 20px
 }
 
 /*:::::::::::::::::: MISE EN FORME DES INPUT DES VALEURS TAILLE ET POIDS ::::::::::::::::::*/
@@ -142,6 +37,7 @@
   color: var(--white);
   border: 1px solid var(--bg-color);
   box-shadow: var(--neu-little-input);
+  margin-left: 20px
 }
 
 #OFA-form input[type='number']::placeholder {

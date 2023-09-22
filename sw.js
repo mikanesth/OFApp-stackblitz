@@ -1,7 +1,7 @@
 const cacheVersion = "V1.0";
 
 const cachedFiles = [
-  "./styles.css",
+  /*"./styles.css",
   "./assets/css/carte1.css",
   "./assets/css/carte2.css",
   "./assets/css/carte3.css",
@@ -9,7 +9,7 @@ const cachedFiles = [
   "./assets/css/responsive.css",
   "./var.css",
   "./index.js",
-  "./offline.html",
+  "./offline.html",*/
   "./assets/img/perfusion.svg",
   "./assets/img/favicon.ico",
 ];

@@ -21,12 +21,12 @@
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c"/>
     <meta name="msapplication-config" content="/assets/img/browserconfig.xml"/>
-    <script>
+    <!--<script type="module">
       window.addEventListener('load', ()=>{
         if("serviceWorker" in navigator){
-          navigator.serviceWorker.register('/sw.js')
+          navigator.serviceWorker.register(new URL('./sw.js', import.meta.url))
         }});
-    </script>
+    </script>-->
   </head>
 
   <!-- ////////////// DEBUT DU BODY ////////////////////////: -->
@@ -60,7 +60,7 @@
       <div class="container__title">
         <div class="title_paragraph1">
           <p>
-            Renseigner caractéristique du ou de la patient(e)
+            Renseigner caractéristique du / de la patient(e)
           </p>
         </div>
         <div class="title_paragraph2">
@@ -83,22 +83,11 @@
       <div class="data-card card1">
         <h3>Caractéristiques</h3>
         <!-- ::::::::::: SOUS CARTE DE VALIDATION DES CONTRE-INDICATIONS ::::::::::::::::::: -->
-        <!-- <input type="checkbox" name="ci-checkbox" id="ci-checkbox" />
-        <div class="ci-card">
-          <div class="ci-text">
-            <label for="ci-checkbox">
-              <h4 id="ci-uncheck">Valider les contre-indications</h4>
-              <h4 id="ci-check">Contre-indications validées</h4>
-              <span class="ci-custom-checkbox"></span>
-            </label>
-
-            <ul>
-              <li>BAV niv. 2-3 ou ß-bloquant</li>
-              <li>DFG &lt; 30 (MgSO4)</li>
-              <li>Epilepsie (Lidocaine)</li>
-            </ul>
-          </div>
-        </div> -->
+        <input type="checkbox" name="ofa-checkbox" id="ofa-checkbox" />
+        <input type="checkbox" name="suf-checkbox" id="suf-checkbox"/>
+        <div class="random-card">
+          
+        </div>
         <!-- ::::::::::::::::::::: FORMULAIRE D'ENTREE DES CARACTERISTIQUES PATIENT :::::::::::::::::::: -->
         <form name="POFA" id="OFA-form">
           <label for="taille-input">Taille (en cm)</label>
