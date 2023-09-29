@@ -77,7 +77,7 @@ function idealWeight(t, s) {
 }
 
 function ketaCalc(iw) {
-  let dose = 0.75 * iw;
+  let dose = 0.5 * iw;
   if (dose > 50) {
     return 50;
   }
