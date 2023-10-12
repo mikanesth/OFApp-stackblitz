@@ -13,6 +13,7 @@ const rootCss = document.querySelector(':root');
 const algoCardContainer = document.querySelector(
   '.card3__titration__algorithm__container'
 );
+const Rescue = document.querySelector('#rescue');
 const inductionCard = document.querySelector('.card3__induction');
 const entretienCard = document.querySelector('.card4');
 const titrationCard = document.querySelector('.card3__titration');
@@ -138,7 +139,7 @@ function finalCalcul(e) {
     )} ml</li>
       <li> - Dexamethasone: ${dexa} mg soit ${dexa / 4} ml</li>
       `;
-    debitSeringue.textContent = ivSpeed;
+    //debitSeringue.textContent = ivSpeed;
     if(randomStatus == 'ofa'){
       dexCard.innerHTML = `
       <p>
@@ -146,13 +147,25 @@ function finalCalcul(e) {
               SSI = seringue mère à 10&#x3BC;g/ml, en prélever 5ml dans seringue
               de 5ml
             </p>
-      `
+      `;
+      const textRescue = ["<strong><em>SPI > 50 + FC > 50</em>:</strong> dexdor 10µg (ou sufenta 5µg à discretion de l'anesthésiste)", "<strong><em>SPI > 50 + FC < 50:</em></strong> Sufenta 5µg"];
+      textRescue.forEach(e => {
+        const liRescue = document.createElement("li");
+        liRescue.innerHTML = e;
+        Rescue.appendChild(liRescue)
+      })
     } else {
       dexCard.innerHTML = `
       <p>
       <strong>Dexdor:</strong> NON
     </p>
-      `
+      `;
+      const textRescue = ["<strong><em>SPI > 50</em>:</strong> Sufenta 5µg"];
+      textRescue.forEach(e => {
+        const liRescue = document.createElement("li");
+        liRescue.innerHTML = e;
+        Rescue.appendChild(liRescue)
+      })
     }
   }
     //console.log(ketamine, lidocaine, magnesium, dexa, ivSpeed);

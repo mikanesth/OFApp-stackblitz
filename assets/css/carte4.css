@@ -4,3 +4,19 @@
     box-sizing: content-box;
     padding-bottom: 20px;
 }
+
+.card4__entretien,
+.card4__rescue,
+.card4__end{
+    margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 90%;
+  box-shadow: var(--neu-big-input);
+  border: solid 4px var(--bg-color);
+  padding: 8px 0px;
+}
+
+.card4__rescue li{
+    margin: 5px 0
+}

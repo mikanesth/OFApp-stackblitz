@@ -230,7 +230,7 @@
           <div class="card3__titration__innercontainer">
             <div class="card3__titration__timer-text">
               <p>1-Démarrer la noradrénaline 20µg à √10 (optionnel)</p>
-              <p>2-Dexdor 10µg (1ml) / 1 min QSP Fc [50-70]</p>
+              <p>2-Dexdor 10µg (1ml) / 1 min</p>
               <p>3-Titrer <strong>sur 5 min</strong> dose <strong>max 50µg</strong></p>
             </div>
             <div class="round-timer2">
@@ -254,7 +254,9 @@
                 <span>FC [45-50]<br />PAM OK <br/>ou dose max</span>
               </div>
               <div class="algorithm__card__reaction reactionOK">
-                Continuer induction
+                Propofol 2,5 mg/kg <br>
+                +/-Curare au choix <br>
+                IOT ou ML
               </div>
             </div>
             <div class="card3__algorithm__card">
@@ -272,7 +274,10 @@
         <div class="card3__induction">
           <div class="pastille-carte">Induction</div>
           <p>
-            Induction classique Sufentanil, Propofol +/- Curare<br/>
+            Induction standard: <br>
+            Sufentanil 0,25µg/kg <br>
+            Propofol 2,5 mg/kg <br>
+            +/- Curare au choix de l'anesthésiste<br/>
             Gestion des voies aeriennes: IOT ou ML
           </p>
         </div>
@@ -283,19 +288,51 @@
       <div class="data-card card4">
         <h3>Entretien</h3>
         <div class="card4__entretien">
-          <div class="pastille-carte">Entretien</div>
+          <div class="pastille-carte">Objectifs</div>
           <ul>
             <li>
-              Dexdor: 10µg (1ml) avant incision puis horaire QSP FC[50-70]
+              BIS/Entropie: 40-60
             </li>
             <li>
-              Seringue Keta / Lido :
-
-              <strong><span id="debit-seringue"></span> ml/h </strong>
+              SPI (Surgical Pleth Index): 20-50
             </li>
             <li>
-              Sevo ou Propofol - Sufentanil si besoin -
-              <strong>pas de bolus de morphine</strong>
+              Si curarisation maintien TOF = 0
+            </li>
+            <li>
+              PAM obj. >60 mmHg
+            </li>
+          </ul>
+        </div>
+        <div class="card4__rescue">
+          <div class="pastille-carte">Rescue</div>
+          <ul id="rescue">
+            <li>
+              <em><strong>FC < 45bpm</strong>:</em> Atropine possible 
+            </li>
+            <li>
+              <em><strong>PAM < 60mmHg</strong>:</em> Ephedrine ou Noradrenaline
+            </li>
+            <li>
+              <em><strong>PAM > 100mmHg</strong>:</em> si BIS, SPI et TOF OK: Eupressyl 10mg IVD bolus
+            </li>
+          </ul>
+        </div>
+        <div class="card4__end">
+          <div class="pastille-carte">Réveil</div>
+          <ul>
+            <li>Analgésie multimodale: Paracetamol +/- keto +/- nefopam +/- spasfon</li>
+            <li>
+              Décurarisation discretion anesthésiste 
+            </li>
+            <li>
+              <strong>PAS de titration sytématique avant réveil</strong>
+            </li>
+            <li>
+              Titration morphine possible en SSPI
+            </li>
+            <li>
+              Prévention NVPO selon score APFEL
             </li>
           </ul>
         </div>
