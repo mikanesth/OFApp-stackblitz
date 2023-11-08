@@ -141,7 +141,7 @@
         <div class="pofa-card">
           <!-- ////////////// SOUS CARTE DE LA PREPARATION DU SOLUTE D'OFA OU POFA ///////////////////: -->
 
-          <div class="pastille-carte">Drogues OFA</div>
+          <div class="pastille-carte">Pochon OFA</div>
           <!--  PASTILLE POUR CARACTÉRISER LA CARTE DE PREPARATION (OFA CLASSIQUE MONITORAGE)-->
 
           <div class="pofa-card__flex-container">
@@ -159,10 +159,14 @@
               <li>- Dexamethasone:</li>
             </ul>
           </div>
+        </div>
+
+        <div class="dex-card-container">
+          <div class="pastille-carte">Dexmedetomidine</div>
           <!-- ///////////////////// SOUS CARTE DE LA PREPARATION DE LA DEXMEDETO /////////////////////////////// -->
           <div class="dex-card">
             <p>
-              <strong>Dexdor:</strong>Attente de randomisation
+              <strong>Dexdor: </strong>Attente de randomisation
             </p>
           </div>
         </div>
@@ -190,11 +194,11 @@
         <!-- :::::::::::::: CARTE DE RAPPEL SUR CHECKLIST ::::::::::::::::::: -->
         <div class="card3__checklist">
           <div class="pastille-carte">checklist</div>
+          <item><input type="checkbox" name="standard" id="standard">  Monitorage standard (ECG, PNI, SpO2) </item>
           <item><input type="checkbox" name="bis" id="bis">  <strong>BIS (nécessaire)</strong> </item>
           <item><input type="checkbox" name="SPI" id="SPI">  <strong>SPI (nécessaire)</strong> </item>
           <item><input type="checkbox" name="nmt" id="nmt">  <strong>NMT (nécessaire)</strong> </item>
-          <item><input type="checkbox" name="standard" id="standard">  Monitorage standard (ECG, PNI, SpO2) </item>
-          <item><input type="checkbox" name="checklist" id="checklist">  Checklist HAS </item>
+          <item><input type="checkbox" name="PA" id="PA">  <strong>Mesure PAM baseline allongé (nécéssaire)</strong> </item>
         </div>
         <!-- ::::::::::::::::: CARTE DU TIMER POUR PERFUSION DU POCHON OFA :::::::::::::::::::::: -->
         <div class="card3__POFA">
@@ -222,9 +226,10 @@
           <div class="pastille-carte">Titration Dexdor</div>
           <div class="card3__titration__innercontainer">
             <div class="card3__titration__timer-text">
-              <p>1-Démarrer la noradrénaline 20µg à √10 (optionnel)</p>
-              <p>2-Dexdor 10µg (1ml) / 1 min</p>
-              <p>3-Titrer <strong>sur 5 min</strong> dose <strong>max 50µg</strong></p>
+              <p>1- Mesure PA /1min pdt 10 min.</p>
+              <p>2-Démarrer la noradrénaline 20µg à √10 (optionnel)</p>
+              <p>3-Dexdor 10µg (1ml) / 1 min</p>
+              <p>4-Titrer <strong>sur 5 min</strong> dose <strong>max 50µg</strong></p>
             </div>
             <div class="round-timer2">
               <p>Start<br />5min</p>
@@ -236,15 +241,15 @@
           <div class="card3__titration__algorithm__container">
             <div class="card3__algorithm__card">
               <div class="algorithm__card__situation">
-                <span>FC &lt; 45</span>
+                <span>FC &lt; 50</span>
               </div>
               <div class="algorithm__card__reaction">
-                Arrêt dexdor<br />Atropine
+                Arrêt dexdor<br />+/-Atropine
               </div>
             </div>
             <div class="card3__algorithm__card cardOK">
               <div class="algorithm__card__situation situationOK">
-                <span>FC [45-50]<br />PAM OK <br/>ou dose max</span>
+                <span>FC [50-60]<br />PAM OK <br/>ou dose max</span>
               </div>
               <div class="algorithm__card__reaction reactionOK">
                 Propofol 2,5 mg/kg <br>
@@ -307,7 +312,13 @@
               <em><strong>PAM < 60mmHg</strong>:</em> Ephedrine ou Noradrenaline
             </li>
             <li>
-              <em><strong>PAM > 100mmHg</strong>:</em> si BIS, SPI et TOF OK: Eupressyl 10mg IVD bolus
+              <em><strong>PAM > 100mmHg</strong>:</em> si BIS, SPI et TOF OK: Eupressyl 10mg IVD bolus (pas de clonidine)
+            </li>
+            <li>
+              <em><strong>BIS > 60</strong>:</em> narcose insuffisante = augm. halogénés (pas de dexdor ou suf)
+            </li>
+            <li>
+              <em><strong>BIS < 40</strong>:</em> narcose trop profonde = baisse halogénés
             </li>
           </ul>
         </div>

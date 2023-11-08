@@ -1,5 +1,4 @@
 .card2 {
-  max-height: 100vh;
   max-width: 20vw;
   box-sizing: content-box;
   padding-bottom: 20px;
@@ -7,15 +6,18 @@
 
 .pofa-card,
 .container_classic-drugs,
-.container_monito {
+.container_monito, .dex-card-container{
   margin: auto;
+  margin-bottom: 10px;
   border-radius: 10px;
   width: 90%;
-  min-height: 20px;
   box-shadow: var(--neu-big-input);
   border: solid 4px var(--bg-color);
-  padding: 10px 0px;
-  
+  padding: 8px 0px;
+}
+
+.dex-card-container{
+  min-height: auto;
 }
 .container_classic-drugs {
   margin-top: 20px;
@@ -58,10 +60,9 @@
 }
 
 .pofa-card ul {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   text-align: start;
   list-style: none;
-  height: 65px;
 }
 
 .pofa-card img {
@@ -72,10 +73,10 @@
 .pofa-card__flex-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 .pofa-card__inside-flex-container {
   display: flex;
