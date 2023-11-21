@@ -145,3 +145,11 @@ ul {
 .card1 {
   max-height: 65vh;
 }
+
+footer{
+  position: absolute;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  bottom: 5px;
+  font-size: 0.8rem;
+}
