@@ -30,6 +30,8 @@
   /*/ //////////////// VAR PSEUDO-ELEMENTS ////////////////////*/
 
   --iPhone-screen : 400px;
+
+  --cardNumber: '0';
 }
 
 /*///////////  ANIMATION CLASSES /////////////////////////*/
