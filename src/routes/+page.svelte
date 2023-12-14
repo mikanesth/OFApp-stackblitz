@@ -73,9 +73,10 @@
                   id="men-radio" /><span></span
               ></label>
               <br />
-              <input type="submit" value="valider" />
+              <input type="submit" value="valider" on:click|preventDefault={}/>
             </form>
     </Card>
+    <Card cardNumber={"2"} cardTitle={"déroulement"}/>
 </div>
 
 <Footer/>
@@ -109,22 +110,14 @@
   text-align: center;
   box-shadow: 3px 3px 7px var(--neu-darker), -3px -3px 7px var(--neu-white);
 }
-.title_paragraph3::before,
-.card3 h3::before {
+.title_paragraph3::before {
   content: '3';
 }
-.title_paragraph2::before,
-.card2 h3::before {
+.title_paragraph2::before {
   content: '2';
 }
-.title_paragraph1::before,
-.card1 h3::before {
+.title_paragraph1::before {
   content: '1';
-}
-
-.title_paragraph4::before,
-.card4 h3::before {
-  content: '4';
 }
 
 .container__title {

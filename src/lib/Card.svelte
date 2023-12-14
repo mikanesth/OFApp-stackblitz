@@ -12,39 +12,50 @@
 </script>
 
 <div class={'data-card card'+cardNumber}>
-    <span>{cardNumber}</span>
-    <h3>{cardTitle}</h3>
+    <div class="title-flex">
+        <span>{cardNumber}</span>
+        <h3>{cardTitle}</h3>
+    </div>
     <slot />
 </div>
 
 
 
 <style>
-    .data-card {
-  max-height: 80vh;
-  background: var(--bg-color);
-  max-width: 30%;
-  min-width: 380px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
-      var(--neu-darker),
-    var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
-      var(--neu-white);
+.data-card {
+    max-width: 300px;
+    min-width: 280px;
+    opacity: 1;
+    max-height: 80vh;
+    background: var(--bg-color);
+    max-width: 30%;
+    min-width: 380px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--offset-big-box) var(--offset-big-box) var(--blur-big-box)
+            var(--neu-darker),
+            var(--offset-big-box-neg) var(--offset-big-box-neg) var(--blur-big-box)
+            var(--neu-white);
+}
+
+.title-flex{
+    display: flex;
+    justify-content:left;
+
 }
 
 h3 {
-    display: block;
-    width: 70%
+    position: relative;
+    left: calc(50% - 30px);
+    transform: translateX(-50%)
 }
 
 span {
     text-align: left;
     position:absolute;
-    display:block;
     top: 10px;
-    left: -50%;
-    transform: translateX(100%);
+    left: 10px;
+    display:block;
     margin-right: 10px;
     font-size: 1rem;
     background: var(--bg-color);
