@@ -1,0 +1,220 @@
+/*::::::::::::: carte pour rappeler la nécéssité monitorage et checklist ::::::::::::::::::*/
+.card3 {
+  font-size: 0.8rem;
+}
+.card3__checklist,
+.card3__POFA,
+.card3__titration,
+.card3__induction,
+.card3__entretien {
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 90%;
+  box-shadow: var(--neu-big-input);
+  border: solid 4px var(--bg-color);
+  padding: 8px 0px;
+}
+
+.card3__checklist  {
+  text-align: left;
+  & item{
+    margin-left: 3vw;
+  }
+}
+
+
+
+.card3__POFA__innercontainer,
+.card3__titration__innercontainer {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card3__POFA__timer-text,
+.card3__titration__timer-text {
+  width: 70%;
+}
+
+/*:::::::::::::::::: STYLING DES TIMER ROND:::::::::::::::::::*/
+
+.card3__POFA__innercontainer svg,
+.card3__titration__innercontainer svg {
+  display: block;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+  position: relative;
+  height: 64px;
+  width: 64px;
+}
+
+.round-timer5,
+.round-timer2 {
+  box-shadow: var(--neu-med-box);
+  background-color: var(--bg-color);
+  width: 64px;
+  height: 64px;
+  margin: auto;
+  display: block;
+  border-radius: 50%;
+  transition: 150ms;
+}
+
+.round-timer5:active,
+.round-timer2:active {
+  box-shadow: var(--neu-little-element);
+}
+.round-timer5 p,
+.round-timer2 p {
+  display: block;
+  position: absolute;
+  margin-top: 0.8rem;
+  margin-left: 32px;
+  transform: translateX(-50%);
+}
+
+.card3__POFA__innercontainer svg circle,
+.card3__titration__innercontainer svg circle {
+  stroke-dasharray: 186px;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+  stroke-width: 3px;
+  stroke: var(--green-valid);
+  fill: none;
+}
+
+.round-timer5 svg circle {
+  animation: rotate-countdown 300s linear forwards;
+}
+
+.timer2-running svg circle {
+  animation: rotate-countdown 300s linear forwards running;
+}
+@keyframes rotate-countdown {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+  100% {
+    stroke-dashoffset: 186px;
+  }
+}
+
+/*:::::::::::::::::::::: PARTIE SUR LA TITRATION DE LA DEXMEDETO :::::::::::::::::::::::*/
+
+.card3__titration__timer-text:first-child {
+  margin-top: 5px;
+}
+
+.card3__titration__timer-text p {
+  font-size: 0.8rem;
+}
+
+/*::::::::::::: container des cartes des différentes situations après injection de dexdor :::::::::::::::::*/
+
+.card3__titration__algorithm__container {
+  margin-top: 5px;
+  /*border: 1px solid var(--black);*/
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  transition: 200ms;
+  height: auto;
+}
+
+.card3__entretien,
+.card3__induction {
+  display: block;
+  transition: 200ms;
+  height: auto;
+  opacity: 1;
+}
+
+.card3__induction, .card3__titration{
+  display: none;
+}
+
+
+.card3__algorithm__card {
+  width: 25%;
+  border: 3px solid var(--light-red);
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px var(--neu-darker), -2px -2px 4px var(--neu-white);
+  height: auto;
+}
+
+.algorithm__card__situation {
+  background-color: var(--light-red);
+  /*border-top-left-radius: 8px;
+  border-top-right-radius: 8px;*/
+  min-height: 3vh;
+  padding: 2px;
+}
+
+.algorithm__card__situation span {
+  position: relative;
+  display: inline-block;
+  top: 1.5vh;
+  transform: translateY(-50%);
+}
+
+.algorithm__card__reaction {
+  padding: 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  /*border: 2px solid var(--light-red);*/
+  border-top: none;
+  transition: 200ms;
+  height: 7vh
+}
+
+.cardOK {
+  border: 2px solid var(--green-valid);
+}
+
+.situationOK {
+  background-color: var(--green-valid);
+}
+.situationOK span {
+  color: var(--black);
+  top: 2.5vh;
+}
+
+.reactionOK{
+  height: auto
+}
+
+/* bouton de validation de la bonne titration du dexdor */
+
+.little-button {
+  border: solid 1px var(--bg-color);
+  height: 8vh;
+  max-height: 40px;
+  width: 5vw;
+  max-width: 100px;
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  margin: 10px auto;
+  background: var(--neu-button-bg);
+  box-shadow: 3px 3px 4px var(--neu-darker), -3px -3px 4px var(--neu-white);
+}
+
+.little-button:hover {
+  background: var(--neu-button-bg-hover);
+}
+
+.little-button:active {
+  transition: 100ms;
+  box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
+}
+
+/*  :::::::: carte sur induction classique :::::::::::::  */

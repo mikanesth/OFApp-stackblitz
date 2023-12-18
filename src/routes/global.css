@@ -1,0 +1,513 @@
+
+/*/////////////. CARTE DE VALIDATION DE LA RANDOMISATION ////////*/
+.card1 {
+    max-width: 300px;
+    min-width: 280px;
+    opacity: 1;
+  }
+  .random-status-title{
+    margin-bottom: 25px
+  }
+  
+  .random-card-container{
+    display: flex;
+    margin: auto;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .random-card{
+    border: solid 2px var(--bg-color);
+    height: 5vh;
+    max-height: 20px;
+    width: 10vw;
+    max-width: 100px;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    background: var(--neu-button-bg);
+    box-shadow: var(--neu-button-color);
+    &:hover {
+      box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
+    }
+  }
+/*:::::::::::::::::: MISE EN FORME DU FORMULAIRE ::::::::::::::::::*/
+
+#OFA-form {
+    /*background: salmon;*/
+    height: 33vh;
+    padding: 20px 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  #OFA-form label {
+    margin-bottom: 5px;
+    margin-left: 20px
+  }
+/*:::::::::::::::::: MISE EN FORME DES INPUT DES VALEURS TAILLE ET POIDS ::::::::::::::::::*/
+
+#OFA-form input[type='number'] {
+    background: var(--bg-color);
+    border-radius: 10px;
+    width: 60%;
+    min-height: 4vh;
+    color: var(--white);
+    border: 1px solid var(--bg-color);
+    box-shadow: var(--neu-little-input);
+    margin-left: 20px;
+    padding-left: 10px
+  }
+  
+  #OFA-form input[type='number']::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  #OFA-form input[type='number']::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  #OFA-form input[type='number']:focus {
+    box-shadow: var(--neu-little-input-focus);
+    border: 2px solid var(--neu-white);
+    /*border: 1px solid var(--light-red);*/
+    outline: none;
+  }
+  
+  #OFA-form label[for='poids-input']::after,
+  #OFA-form label[for='taille-input']::after {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+    box-shadow: var(--neu-little-element);
+    border: 3px solid var(--bg-color);
+    position: relative;
+    top: 3px;
+  }
+  #OFA-form label[for='taille-input']::after {
+    background-color: var(--after-bg-1);
+  }
+  #OFA-form label[for='poids-input']::after {
+    background-color: var(--after-bg-2);
+  }
+
+/*::::::::::::::::::: MISE EN FORME DES BOUTONS RADIO DU SEXE ::::::::::::::::::::*/
+
+#OFA-form label[for='men-radio'] span,
+#OFA-form label[for='women-radio'] span {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: linear-gradient(145deg, #00757f, #00626b);
+  box-shadow: 5px 5px 10px #00545c, -5px -5px 10px #008692;
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
+}
+
+#OFA-form input[type='radio']:checked + span {
+  background: #006d77;
+  box-shadow: inset 5px 5px 10px #00545c, inset -5px -5px 10px #008692;
+}
+
+#OFA-form label[for='men-radio'] span:hover,
+#OFA-form label[for='women-radio'] span:hover {
+  background: linear-gradient(145deg, #00626b, #00757f);
+  box-shadow: 5px 5px 10px #00545c, -5px -5px 10px #008692;
+}
+#OFA-form input[type='radio']:checked + span::before {
+  content: '';
+  display: block;
+  opacity: 1;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: var(--green-valid);
+  position: absolute;
+  transform: translate(36%, 36%);
+}
+
+#OFA-form input[type='radio'] {
+  display: none;
+}
+
+#OFA-form p {
+    margin-left: 20px;
+}
+
+/*::::::::::::::::: MISE EN FORME DU BOUTON VALIDER :::::::::::::::::::::::*/
+
+#OFA-form input[type='submit'] {
+  border: solid 1px var(--bg-color);
+  height: 10vh;
+  max-height: 50px;
+  width: 10vw;
+  max-width: 100px;
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  background: var(--neu-button-bg);
+  box-shadow: var(--neu-button-color);
+}
+
+#OFA-form input[type='submit']:hover {
+  box-shadow: var(--neu-button-color-hover);
+  background: var(--neu-button-bg-hover);
+}
+
+#OFA-form input[type='submit']:active {
+  transition: 100ms;
+  box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
+}
+
+.card2 {
+    max-width: 20vw;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+  }
+  
+  .pofa-card,
+  .container_classic-drugs,
+  .container_monito, .dex-card-container{
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: var(--neu-big-input);
+    border: solid 4px var(--bg-color);
+    padding: 8px 0px;
+  }
+  
+  .dex-card-container{
+    min-height: auto;
+  }
+  .container_classic-drugs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .classic-drug-card p {
+    margin-bottom: 15px
+  }
+  
+  .classic-drug-card strong {
+    padding: 3px;
+    border-radius: 3px;
+    color: var(--black);
+  }
+  
+  /* ::::::::: styling pour faire effet etiquettes de couluer comme sur le palteau ::::::*/
+  
+  .classic-drug-card :first-child strong {
+    background-color: rgb(133, 199, 227);
+  }
+  
+  .classic-drug-card :nth-child(2) strong {
+    background-color: rgb(255, 255, 43);
+  }
+  
+  .classic-drug-card :nth-child(3) strong {
+    background-color: rgb(255,0,0);
+    color: rgb(255, 250, 250);
+  }
+  .classic-drug-card :nth-child(4) strong {
+    background-color: rgb(222, 191, 217);
+  }
+  
+  .classic-drug-card :nth-child(5) strong {
+    color: var(--white)
+  }
+  .classic-drug-card :nth-child(6) strong {
+    color: var(--white)
+  }
+  
+  .pofa-card ul {
+    font-size: 0.6rem;
+    text-align: start;
+    list-style: none;
+  }
+  
+  .pofa-card img {
+    width: 30px;
+    display: inline-block;
+  }
+  
+  .pofa-card__flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.6rem;
+  }
+  .pofa-card__inside-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .pofa-card__flex-container ul {
+    border-left: 1px solid var(--white);
+    padding: 10px;
+  }
+  
+  .dex-card {
+    font-size: 0.8rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  .inner-card {
+    font-size: 0.8rem;
+  }
+  
+  /*:::::::::::::::::pastille d'inforamtion sur quelle est chaque carte de prépration du palteau :::::::::::*/
+  
+  .pastille-carte {
+    position: absolute;
+    transform-origin: top left;
+    transform: translate(5px,-90%);
+    min-height: 10px;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: var(--green-valid);
+    color: var(--black);
+    font-size: 0.7rem;
+  }
+  
+  /*:::::::::::::: boutons pour le mobile exclusivemnt::::::::::::*/
+  .button-mobile-return, .button-mobile-valid {
+    display: none;
+  }
+
+  /*::::::::::::: carte pour rappeler la nécéssité monitorage et checklist ::::::::::::::::::*/
+.card3 {
+    font-size: 0.8rem;
+  }
+  .card3__checklist,
+  .card3__POFA,
+  .card3__titration,
+  .card3__induction,
+  .card3__entretien {
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: var(--neu-big-input);
+    border: solid 4px var(--bg-color);
+    padding: 8px 0px;
+  }
+  
+  .card3__checklist  {
+    text-align: left;
+    & item{
+      margin-left: 3vw;
+    }
+  }
+  
+  
+  
+  .card3__POFA__innercontainer,
+  .card3__titration__innercontainer {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .card3__POFA__timer-text,
+  .card3__titration__timer-text {
+    width: 70%;
+  }
+  
+  /*:::::::::::::::::: STYLING DES TIMER ROND:::::::::::::::::::*/
+  
+  .card3__POFA__innercontainer svg,
+  .card3__titration__innercontainer svg {
+    display: block;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+    position: relative;
+    height: 64px;
+    width: 64px;
+  }
+  
+  .round-timer5,
+  .round-timer2 {
+    box-shadow: var(--neu-med-box);
+    background-color: var(--bg-color);
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+    transition: 150ms;
+  }
+  
+  .round-timer5:active,
+  .round-timer2:active {
+    box-shadow: var(--neu-little-element);
+  }
+  .round-timer5 p,
+  .round-timer2 p {
+    display: block;
+    position: absolute;
+    margin-top: 0.8rem;
+    margin-left: 32px;
+    transform: translateX(-50%);
+  }
+  
+  .card3__POFA__innercontainer svg circle,
+  .card3__titration__innercontainer svg circle {
+    stroke-dasharray: 186px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 3px;
+    stroke: var(--green-valid);
+    fill: none;
+  }
+  
+  .round-timer5 svg circle {
+    animation: rotate-countdown 300s linear forwards;
+  }
+  
+  .timer2-running svg circle {
+    animation: rotate-countdown 300s linear forwards running;
+  }
+  @keyframes rotate-countdown {
+    0% {
+      stroke-dashoffset: 0px;
+    }
+    100% {
+      stroke-dashoffset: 186px;
+    }
+  }
+  
+  /*:::::::::::::::::::::: PARTIE SUR LA TITRATION DE LA DEXMEDETO :::::::::::::::::::::::*/
+  
+  .card3__titration__timer-text:first-child {
+    margin-top: 5px;
+  }
+  
+  .card3__titration__timer-text p {
+    font-size: 0.8rem;
+  }
+  
+  /*::::::::::::: container des cartes des différentes situations après injection de dexdor :::::::::::::::::*/
+  
+  .card3__titration__algorithm__container {
+    margin-top: 5px;
+    /*border: 1px solid var(--black);*/
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    transition: 200ms;
+    height: auto;
+  }
+  
+  .card3__entretien,
+  .card3__induction {
+    display: block;
+    transition: 200ms;
+    height: auto;
+    opacity: 1;
+  }
+  
+  .card3__induction, .card3__titration{
+    display: none;
+  }
+  
+  
+  .card3__algorithm__card {
+    width: 25%;
+    border: 3px solid var(--light-red);
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px var(--neu-darker), -2px -2px 4px var(--neu-white);
+    height: auto;
+  }
+  
+  .algorithm__card__situation {
+    background-color: var(--light-red);
+    /*border-top-left-radius: 8px;
+    border-top-right-radius: 8px;*/
+    min-height: 3vh;
+    padding: 2px;
+  }
+  
+  .algorithm__card__situation span {
+    position: relative;
+    display: inline-block;
+    top: 1.5vh;
+    transform: translateY(-50%);
+  }
+  
+  .algorithm__card__reaction {
+    padding: 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /*border: 2px solid var(--light-red);*/
+    border-top: none;
+    transition: 200ms;
+    height: 7vh
+  }
+  
+  .cardOK {
+    border: 2px solid var(--green-valid);
+  }
+  
+  .situationOK {
+    background-color: var(--green-valid);
+  }
+  .situationOK span {
+    color: var(--black);
+    top: 2.5vh;
+  }
+  
+  .reactionOK{
+    height: auto
+  }
+  
+  /* bouton de validation de la bonne titration du dexdor */
+  
+  .little-button {
+    border: solid 1px var(--bg-color);
+    height: 8vh;
+    max-height: 40px;
+    width: 5vw;
+    max-width: 100px;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    margin: 10px auto;
+    background: var(--neu-button-bg);
+    box-shadow: 3px 3px 4px var(--neu-darker), -3px -3px 4px var(--neu-white);
+  }
+  
+  .little-button:hover {
+    background: var(--neu-button-bg-hover);
+  }
+  
+  .little-button:active {
+    transition: 100ms;
+    box-shadow: 1px 1px 3px var(--neu-darker), -1px -1px 3px var(--neu-white);
+  }
+  
+  /*  :::::::: carte sur induction classique :::::::::::::  */
+  

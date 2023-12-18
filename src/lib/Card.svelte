@@ -1,5 +1,7 @@
 <script>
     import { onMount } from "svelte";
+    import { flip } from "svelte/animate";
+    import { fly } from "svelte/transition";
 
     /**@type {string}*/
     export let cardNumber;
@@ -11,7 +13,7 @@
     })
 </script>
 
-<div class={'data-card card'+cardNumber}>
+<div class={'data-card card'+cardNumber} transition:fly={{duration: 800}}>
     <div class="title-flex">
         <span>{cardNumber}</span>
         <h3>{cardTitle}</h3>
