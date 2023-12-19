@@ -41,35 +41,27 @@
     })
 
   function checkNumbers(e) {
-  //tablette.textContent = '';
-  //e.target.style.background = 'white';
   console.log(e);
   let inputId = e.target.id;
   let inputValue = e.target.value;
   if (inputId.includes('taille')) {
-    //console.log(inputValue)
     if (inputValue < 100 || inputValue > 220) {
       rootCss.style.setProperty('--after-bg-1', '#ed6b5ace');
-      //tablette.textContent = 'la taille est hors range';
       return;
     }
-    //tablette.textContent = 'la taille est OK';
     rootCss.style.setProperty('--after-bg-1', '#83c5be');
     return;
   }
-  //console.log(inputValue)
   if (inputValue < 30 || inputValue > 200) {
     rootCss.style.setProperty('--after-bg-2', '#ed6b5ace');
-    //tablette.textContent = 'le poids est hors range';
     return;
   }
   rootCss.style.setProperty('--after-bg-2', '#83c5be');
-  //tablette.textContent = 'le poids est OK';
   return;
 }
 
 
-
+//fonction de calcul des doses déclenché par clic sur bouton soumettre qui export un objet avec toutes les valeurs dans la variable doses
 function calculDose(){
   if(randomStatus == 'none'){
     alert('Randomisation nécéssaire')
@@ -78,6 +70,10 @@ function calculDose(){
     doses = finalCalcul(taille, poids, imc, sexe, randomStatus);
   }
 }
+
+// reflexion sur mode de fonctionnement des timers
+/**@type {HTMLElement}*/ let circle5;
+/**@type {HTMLElement}*/ let circle2;
 
 </script>
 
@@ -103,6 +99,7 @@ function calculDose(){
     </div>
 </div>
 <div class="data-container">
+  {#if !doseCalculated}
     <Card cardNumber={"1"} cardTitle={"Caractéristiques"}>
         <p id="random-status-title">Statut de randomisation</p>
             <div class="random-card-container">
@@ -162,6 +159,8 @@ function calculDose(){
               <input type="submit" value="valider" on:click|preventDefault={calculDose}/>
             </form>
     </Card>
+    {/if}
+    <!-- apparition des cartes suivantes uniquement apres validation du formaulaire-->
     {#if doseCalculated}
       <Card cardNumber={"2"} cardTitle={"Mon plateau d'induction"}>
         <div class="pofa-card">
@@ -233,7 +232,9 @@ function calculDose(){
               <p>Perfuser le soluté POFA sur 5 minutes</p>
               <p>Utiliser le timer à droite si besoin</p>
             </div>
-            <div class="round-timer5">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions --> 
+            <div class="round-timer5" on:click={()=>{circle5.style.animationPlayState = 'running'}}>
               <p>Start<br />5min</p>
               <svg>
                 <circle
@@ -241,6 +242,7 @@ function calculDose(){
                   cx="32"
                   cy="32"
                   style="animation-play-state: paused"
+                  bind:this={circle5}
                 ></circle>
               </svg>
             </div>
@@ -256,8 +258,10 @@ function calculDose(){
               <p>3-Dexdor 10µg (1ml) / 1 min</p>
               <p>4-Titrer <strong>sur 5 min</strong> dose <strong>max 50µg</strong></p>
             </div>
-            <div class="round-timer2">
-              <p>Start<br />5min</p>
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions --> 
+            <div class="round-timer2" bind:this={circle2} on:click={()=>{circle2.classList.add('timer2-running')}}>
+              <p>Start<br />2min</p>
               <svg>
                 <circle r="30" cx="32" cy="32"></circle>
               </svg>
@@ -304,6 +308,64 @@ function calculDose(){
             Gestion des voies aeriennes: IOT ou ML
           </p>
         </div>
+      </Card>
+
+      <Card cardNumber={4} cardTitle={"Entretien"} >
+          <div class="card4__entretien">
+            <div class="pastille-carte">Objectifs</div>
+            <ul>
+              <li>
+                BIS/Entropie: 40-60
+              </li>
+              <li>
+                SPI (Surgical Pleth Index): 20-50
+              </li>
+              <li>
+                Si curarisation maintien TOF = 0
+              </li>
+              <li>
+                PAM obj. >60 mmHg
+              </li>
+            </ul>
+          </div>
+          <div class="card4__rescue">
+            <div class="pastille-carte">Rescue</div>
+            <ul id="rescue">
+              <li>
+                <em><strong>FC &lt; 45bpm</strong>:</em> Atropine possible 
+              </li>
+              <li>
+                <em><strong>PAM &lt; 60mmHg</strong>:</em> Ephedrine ou Noradrenaline
+              </li>
+              <li>
+                <em><strong>PAM > 100mmHg</strong>:</em> si BIS, SPI et TOF OK: Eupressyl 10mg IVD bolus (pas de clonidine)
+              </li>
+              <li>
+                <em><strong>BIS > 60</strong>:</em> narcose insuffisante = augm. halogénés (pas de dexdor ou suf)
+              </li>
+              <li>
+                <em><strong>BIS &lt; 40</strong>:</em> narcose trop profonde = baisse halogénés
+              </li>
+            </ul>
+          </div>
+          <div class="card4__end">
+            <div class="pastille-carte">Réveil</div>
+            <ul>
+              <li>Analgésie multimodale: Paracetamol +/- keto +/- nefopam +/- spasfon</li>
+              <li>
+                Décurarisation discretion anesthésiste 
+              </li>
+              <li>
+                <strong>PAS de titration sytématique avant réveil</strong>
+              </li>
+              <li>
+                Titration morphine possible en SSPI
+              </li>
+              <li>
+                Prévention NVPO selon score APFEL
+              </li>
+            </ul>
+          </div>
       </Card>
 
     <!-- fin du if de la validation du formulaire de calcul des doses initiales -->

@@ -1,5 +1,4 @@
 .card2 {
-  max-width: 20vw;
   box-sizing: content-box;
   padding-bottom: 20px;
 }
@@ -17,6 +16,7 @@
 }
 
 .dex-card-container{
+  max-width: 15vw;
   min-height: auto;
 }
 .container_classic-drugs {

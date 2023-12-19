@@ -92,7 +92,7 @@
 }
 
 .timer2-running svg circle {
-  animation: rotate-countdown 300s linear forwards running;
+  animation: rotate-countdown 300s linear forwards;
 }
 @keyframes rotate-countdown {
   0% {

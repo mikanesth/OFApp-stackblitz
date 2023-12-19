@@ -384,7 +384,7 @@
   }
   
   .timer2-running svg circle {
-    animation: rotate-countdown 300s linear forwards running;
+    animation: rotate-countdown 120s linear forwards running;
   }
   @keyframes rotate-countdown {
     0% {
@@ -430,9 +430,9 @@
     opacity: 1;
   }
   
-  .card3__induction, .card3__titration{
+  /*.card3__induction, .card3__titration{
     display: none;
-  }
+  }*/
   
   
   .card3__algorithm__card {
@@ -511,3 +511,25 @@
   
   /*  :::::::: carte sur induction classique :::::::::::::  */
   
+  .card4 {
+    max-height: 100vh;
+    max-width: 20vw;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+}
+
+.card4__entretien,
+.card4__rescue,
+.card4__end{
+    margin: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 90%;
+  box-shadow: var(--neu-big-input);
+  border: solid 4px var(--bg-color);
+  padding: 8px 0px;
+}
+
+.card4__rescue li{
+    margin: 5px 0
+}
