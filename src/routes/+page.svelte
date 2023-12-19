@@ -255,7 +255,7 @@ function calculDose(){
             <div class="card3__titration__timer-text">
               <p>1- Mesure PA /1min pdt 10 min.</p>
               <p>Poso Dexdor protocole = 0,5µg/kg</p>
-              <p>3-Dexdor 10µg (1ml) / 1 min</p>
+              <p>3-Titration Dexdor 10µg (1ml) / 1 min</p>
               <p>4-Titrer <strong>sur 5 min</strong> dose <strong>max 50µg</strong></p>
             </div>
             <!-- svelte-ignore a11y-click-events-have-key-events -->
