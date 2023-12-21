@@ -160,7 +160,7 @@ function finalCalcul(e) {
       <strong>Dexdor:</strong> NON
     </p>
       `;
-      const textRescue = ["<strong><em>SPI > 50</em>:</strong> Sufenta 5µg <br/>SPI < 50 pas de réinjection (même si tachycardie, hta...)"];
+      const textRescue = ["<strong><em>SPI > 50</em>:</strong> Sufenta 5µg <br/><strong><em>SPI < 50:</em>:</strong> pas de réinjection (même si tachycardie, hta...)"];
       textRescue.forEach(e => {
         const liRescue = document.createElement("li");
         liRescue.innerHTML = e;
