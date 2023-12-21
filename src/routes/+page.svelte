@@ -122,7 +122,7 @@ function calculDose(){
                 on:keyup={checkNumbers}
               />
               <br />
-              <label for="poids-input">Poids (en Kg)</label>
+              <label for="poids-input">Poids réel (en Kg)</label>
               <input
                 required
                 type="number"
@@ -254,14 +254,14 @@ function calculDose(){
           <div class="card3__titration__innercontainer">
             <div class="card3__titration__timer-text">
               <p>1- Mesure PA /1min pdt 10 min.</p>
-              <p>2-Démarrer la noradrénaline 20µg à √10 (optionnel)</p>
+              <p>2-Posologie Dexdor 0,5µg/kg max 50 µg</p>
               <p>3-Dexdor 10µg (1ml) / 1 min</p>
               <p>4-Titrer <strong>sur 5 min</strong> dose <strong>max 50µg</strong></p>
             </div>
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions --> 
             <div class="round-timer2" bind:this={circle2} on:click={()=>{circle2.classList.add('timer2-running')}}>
-              <p>Start<br />2min</p>
+              <p>Start<br />5min</p>
               <svg>
                 <circle r="30" cx="32" cy="32"></circle>
               </svg>
@@ -331,6 +331,7 @@ function calculDose(){
           <div class="card4__rescue">
             <div class="pastille-carte">Rescue</div>
             <ul id="rescue">
+              {#if randomStatus=="ofa"}
               <li>
                 <em><strong>FC &lt; 45bpm</strong>:</em> Atropine possible 
               </li>
@@ -346,6 +347,42 @@ function calculDose(){
               <li>
                 <em><strong>BIS &lt; 40</strong>:</em> narcose trop profonde = baisse halogénés
               </li>
+              <li>
+                <strong><em>SPI > 50 + FC > 50</em>:</strong> dexdor 10µg <br/>si Dexdor insuffisanrt sufenta 5µg possible
+              </li>
+              <li>
+                <strong><em>SPI > 50 + FC &lt; 50:</em></strong> Sufenta 5µg
+              </li>
+              <li>
+                <strong style ="color: red">PAS de Clonidine / Catapressan</strong>
+              </li>
+              {/if}
+              {#if randomStatus == "suf"}
+              <li>
+                <em><strong>FC &lt; 45bpm</strong>:</em> Atropine possible 
+              </li>
+              <li>
+                <em><strong>PAM &lt; 60mmHg</strong>:</em> Ephedrine ou Noradrenaline
+              </li>
+              <li>
+                <em><strong>PAM &gt; 100mmHg</strong>:</em> si BIS, SPI et TOF OK: Eupressyl 10mg IVD bolus (pas de clonidine)
+              </li>
+              <li>
+                <em><strong>BIS &gt; 60</strong>:</em> narcose insuffisante = augm. halogénés (pas de dexdor ou suf)
+              </li>
+              <li>
+                <em><strong>BIS &lt; 40</strong>:</em> narcose trop profonde = baisse halogénés
+              </li>
+              <li>
+                <strong><em>SPI &gt; 50</em>: sufenta 5µg
+              </li>
+              <li>
+                <strong><em>SPI &lt; 50 </em>: PAS de sufenta (même si tachycardie, HTA, incision...)
+              </li>
+              <li>
+                <strong style ="color: red">PAS de Clonidine / Catapressan</strong>
+              </li>
+              {/if}
             </ul>
           </div>
           <div class="card4__end">
@@ -357,6 +394,9 @@ function calculDose(){
               </li>
               <li>
                 <strong>PAS de titration sytématique avant réveil</strong>
+              </li>
+              <li>
+                <strong style ="color: red">PAS de Clonidine / Catapressan</strong>
               </li>
               <li>
                 Titration morphine possible en SSPI
