@@ -148,7 +148,7 @@ function finalCalcul(e) {
               de 5ml
             </p>
       `;
-      const textRescue = ["<strong><em>SPI > 50 + FC > 50</em>:</strong> dexdor 10µg (ou sufenta 5µg à discretion de l'anesthésiste)", "<strong><em>SPI > 50 + FC < 50:</em></strong> Sufenta 5µg"];
+      const textRescue = ["<strong><em>SPI > 50 + FC > 50</em>:</strong> dexdor 10µg <br/>si dexdor insuffisant sufenta 5µg à discretion de l'anesthésiste)", "<strong><em>SPI > 50 + FC < 50:</em></strong> Sufenta 5µg"];
       textRescue.forEach(e => {
         const liRescue = document.createElement("li");
         liRescue.innerHTML = e;
@@ -160,7 +160,7 @@ function finalCalcul(e) {
       <strong>Dexdor:</strong> NON
     </p>
       `;
-      const textRescue = ["<strong><em>SPI > 50</em>:</strong> Sufenta 5µg"];
+      const textRescue = ["<strong><em>SPI > 50</em>:</strong> Sufenta 5µg <br/>SPI < 50 pas de réinjection (même si tachycardie, hta...)"];
       textRescue.forEach(e => {
         const liRescue = document.createElement("li");
         liRescue.innerHTML = e;
